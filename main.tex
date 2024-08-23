@@ -49,6 +49,7 @@
 \usepackage{caption}
 \usepackage{cleveref}
 \usepackage{subcaption}
+\usepackage{xcolor}
 %\usepackage{hyperref}% add hypertext capabilities
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
@@ -103,8 +104,7 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
-An article usually includes an abstract, a concise summary of the work
-covered at length in the main body of the article. 
+\blindtext
 \end{abstract}
 
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
@@ -114,9 +114,11 @@ covered at length in the main body of the article.
 
 \section{Introduction}
 
-\blindtext[5]
 
-\begin{figure*}
+
+
+
+\begin{figure*}[t]
 	\centering
 	\begin{subfigure}[b]{0.24\textwidth}
 		\centering
@@ -138,15 +140,19 @@ covered at length in the main body of the article.
 	\caption{3D rendering of an orthogonal vortex configuration, undergoing a vortex reconnection. The red tube represents a superfluid vortex, where the radius has been greatly exaggerated for visual purposes, and the blue volume rendering represents the scaled normal fluid enstrophy $\bom^2/\bom^2_{max}$.}
 \end{figure*}
 
-\blindtext[3]
+\blue{
+\blindtext[5]
+}
 
-\begin{figure}
+\paragraph*{Main results.---} In this Letter, we use the Schwarz model to evolve vortex filaments $\s(\xi,t)$, where $\xi$ is the natural parametrisation of vortex lines, also known as the arclength. The normal fluid is coupled via the mutual friction force $\mathbf{f}_{ns}$ in a self-consistent manner using a recently developed technique in Ref. \cite{galantucciNewSelfconsistentApproach2020b}. Further details of the method are outlined in Ref. \cite{PunctuatedEnergyInjection} and the corresponding Supplementary Materials. 
+
+\begin{figure}[H]
     \centering
     \includegraphics*[width=0.48\textwidth]{energy-spec.pdf}
     \caption{Normal fluid kinetic energy spectrum $E_k$ before reconnection (dashed lines), at reconnection (solid lines) and after reconnection (dotted lines) for $T=1.9K$ and $T=2.1K$. \emph{Inset:} Dissipation spectrum $D_k/\nu_n=k^2 E_k$ at the same snapshots in time.}
 \end{figure}
 
-\blindtext[3] 
+
 
 \begin{figure}
     \centering
@@ -167,7 +173,7 @@ covered at length in the main body of the article.
 \end{figure}
 
 
-\blindtext[3] 
+
 
 \begin{figure}
     \centering
@@ -175,7 +181,7 @@ covered at length in the main body of the article.
     \caption{Spectrum ratio of helical mutual friction modes $f^+(k)$ and $f^-(k)$ for $T=1.9K$ and $T=2.1K$.}
 \end{figure}
 
-\blindtext[3] 
+
 
 \begin{figure}
     \centering

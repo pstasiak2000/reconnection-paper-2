@@ -32,37 +32,37 @@ Control: production of eprint (0) enabled
 Warning--empty year in PunctuatedEnergyInjectionb
 You've used 7 entries,
             6079 wiz_defined-function locations,
-            1673 strings with 16126 characters,
-and the built_in function-call counts, 5735 in all, are:
+            1668 strings with 15957 characters,
+and the built_in function-call counts, 5741 in all, are:
 = -- 375
 > -- 122
 < -- 56
 + -- 44
 - -- 44
-* -- 823
+* -- 821
 := -- 530
 add.period$ -- 5
 call.type$ -- 7
 change.case$ -- 25
 chr.to.int$ -- 17
 cite$ -- 10
-duplicate$ -- 575
-empty$ -- 370
+duplicate$ -- 577
+empty$ -- 372
 format.name$ -- 58
-if$ -- 1101
+if$ -- 1103
 int.to.chr$ -- 1
 int.to.str$ -- 14
 missing$ -- 95
 newline$ -- 67
 num.names$ -- 12
-pop$ -- 251
+pop$ -- 257
 preamble$ -- 1
 purify$ -- 24
 quote$ -- 0
-skip$ -- 248
+skip$ -- 246
 stack$ -- 0
 substring$ -- 132
-swap$ -- 509
+swap$ -- 507
 text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 10

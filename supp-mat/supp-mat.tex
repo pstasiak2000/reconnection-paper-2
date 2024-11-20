@@ -82,7 +82,14 @@ prb,
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.4\textwidth]{schematic.png}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{schematic.png}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{schematic-2.png}
+	\end{subfigure}
 	\caption{Schematic diagram of the initial vortex configuration.}
 	\label{fig:schematic}
 \end{figure}
@@ -112,7 +119,7 @@ where $\rho=\rho_n + \rho_s$ is the total density, $\rho_n$ and $\rho_s$ are the
 \end{equation}
 where $\mathcal{D}$ is a coefficient dependent on the vortex Reynolds number and intrinsic properties of the normal fluid. The regularisation of the mutual fricition force onto the normal fluid grid is physically motivated by the strongly localised injection of vorticity during the momentum exchange of point-like particles and viscous flow in classical fluid dynamics \cite{gualtieri2015exact,gualtieri2017turbulence}. In short, the localised vorticity induced by the relative motion between the vortex lines and the normal fluid is diffused to discretisation of the grid spacing $\Delta x$ in a time interval $\epsilon_R$. In this way, the delta-forced fricition as defined in Eq.~\ref{eq:mutual-friction} is regularised by a Gaussian function, the fundamental solution of the diffusion equation. Further details of the method for classical fluids are contained in \cite{gualtieri2015exact,gualtieri2017turbulence} and for FOUCAULT in \cite{galantucciNewSelfconsistentApproach2020b}.  
 
-In this Letter, we report all results using dimensionless units, where the characteristic length scale is $\tilde{\lambda} = D/D_0$, where $D^3=(1\times10^{-3}\mathrm{m})^3$ is the dimensional cube size, $D_0^3=(2\pi)^3$ is the non-dimensional cubic computational domain. The time scale is given by $\tilde{\tau}=\tilde{\lambda}^2\nu_n^0\nu_n$, where the non-dimensional viscosity $\nu_n^0$ resolves the small scales of the normal fluid. In these simulations, these quanties are $\tilde{\lambda}=1.59\times10^{-4}$m, $\nu_n^0=0.32$ and $\tilde{\tau}=0.366$s at $T=1.9K$ and $\tilde{\tau}=0.485$s at $T=2.1K$. We consider an initial configuration of two pairs of orthongal vortices, initialised as shown in the schematic of Fig.~\ref{fig:schematic}.
+In this Letter, we report all results using dimensionless units, where the characteristic length scale is $\tilde{\lambda} = D/D_0$, where $D^3=(1\times10^{-3}\mathrm{m})^3$ is the dimensional cube size, $D_0^3=(2\pi)^3$ is the non-dimensional cubic computational domain. The time scale is given by $\tilde{\tau}=\tilde{\lambda}^2\nu_n^0\nu_n$, where the non-dimensional viscosity $\nu_n^0$ resolves the small scales of the normal fluid. In these simulations, these quanties are $\tilde{\lambda}=1.59\times10^{-4}$m, $\nu_n^0=0.32$ and $\tilde{\tau}=0.366$s at $T=1.9K$ and $\tilde{\tau}=0.485$s at $T=2.1K$. We consider an initial configuration of two pairs of orthongal vortices, initialised as shown in the schematic of Fig.~\ref{fig:schematic}. The seperation between vortices in each pair $d$ is set to be $d_v=0.5$ in dimensionless units, and the shortest distance between pairs is $D_v=\sqrt{(\pi-d_v/2)^2+\pi^2}\sim 3.08$, so that $d_v\ll D_v$. 
 
 \bibliography{references}% Produces the bibliography via BibTeX.
 \end{document}

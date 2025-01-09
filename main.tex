@@ -109,7 +109,15 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
-\blindtext
+We numerically show that during a superfluid vortex reconnection energy is injected 
+into the thermal (normal) component of helium~II at small length scales, but is transferred nonlinearly  to larger length scales, increasing the integral length scale of the normal
+fluid.  We provide an explanation of this inverse energy transfer by decomposing the velocity and 
+the mutual friction (which couples superfluid and normal fluid) into helical modes, showing 
+that the imbalance of homochiral modes results from the punctuated energy and helicity 
+injection during the reconnection. Crucially, the
+chiral imbalance occurs spontaneously from reconnections, unlike ordinary Navier-Stokes turbulence
+where careful external control is required. Finally, we discuss the relevance of our findings to 
+the problem of superfluid turbulence.
 \end{abstract}
 
 %\keywords{Suggested keywords}%Use showkeys class option if keyword
@@ -134,50 +142,116 @@
     \begin{subfigure}[b]{0.24\textwidth}
 		\centering
 		\includegraphics*[width=\textwidth]{snap-4.pdf}
-	\end{subfigure}
-    \hfill
-	\caption{3D rendering of an orthogonal vortex configuration, undergoing a vortex reconnection. The red tube represents a superfluid vortex, where the radius has been greatly exaggerated for visual purposes, and the blue volume rendering represents the scaled normal fluid enstrophy $\bom^2/\bom^2_{max}$.}
+	\end{subfigure} \hfill
+	\caption{Three-dimensional rendering of an orthogonal vortex configuration 
+undergoing a vortex reconnection. The red tubes represent
+the superfluid vortex
+lines (the tubes' radii have been greatly exaggerated for visual purposes), 
+and the blue volume rendering represents the scaled normal fluid enstrophy 
+$\bom^2/\bom^2_{max}$. In the third panel, note the Kelvin waves on the superfluid vortices.}
     \label{fig:visualisation}
 \end{figure*}
 
 %\paragraph*{Introduction.---} 
-Turbulence shapes the physical characteristics of fluid systems, ranging, for instance, from electrically conducting fluids (\textit{magnetohydrodynamics, MHD} turbulence \cite{canuto-dalsgaard-1998}), to classical Newtonian fluids (\textit{Navier-Stokes} turbulence\cite{frisch1995}), to superfluid helium and Bose-Einstein Condensates (\textit{quantum} turbulence\cite{barenghi-etal-2023,Barenghi_Skrbek_Sreenivasan_2023}): turbulence is ubiquitous in the universe, from interstellar media to atomic scales. All turbulent systems are characterised by the existence of a wide range of lengthscales across which inviscid conserved quantities (\textit{e.g.} energy, enstrophy) are transferred without loss, in the spirit of the cascade picture depicted by Richardson \cite{richardson1922weather}. 
-%
-%is a fundamental phenomenon that governs fluid motion across a vast range of scales, influencing everything from atmospheric dynamics to industrial processes. 
-%Understanding turbulence and the mechanisms of energy cascades is crucial for predicting flow behavior, optimizing performance, and advancing technologies in 
-%fields such as aerospace engineering, meteorology, and oceanography. 
-In three-dimensional turbulent flows of classical fluids, turbulence is characterised by a forward cascade -- a dissipationless transfer of kinetic energy from large eddies where the energy is injected to increasingly smaller eddies by nonlinear interactions of fluid structures, until viscous dissipation occurs at the smallest length scales \cite{richardson1922weather,kolmogorov-1941}. The resulting distribution of energy across length scales follows the celebrated Kolmogorov energy spectrum 
-%$E(k)\sim k^{-5/3}$, where $k$ is the wavenumber magnitude, 
-at the intermediate inertial length scales \cite{kolmogorov-1941,frisch1995}. Confining classical turbulence to two-dimensions entails fundamentally distinct physics: a dual cascade emerges of both energy and enstrophy (mean squared vorticity) \cite{kraichnan-1967,boffetta-ecke-2012}, the two conserved quantities in ideal two-dimensional flows. In particular, while we observe a direct cascade of enstrophy, we simultaneously oberve an inverse cascade of energy, \textit{i.e.} an energy transfer towards large scales \cite{boffetta-musacchio-2010},  
-which may favour the generation and persistence of large scale coherent structures \cite{laurie-etal-2014}. 
+Turbulence is ubiquitous in the universe.  It occurs in systems
+as large as nebulae of interstellar gas, and as small as clouds of
+few thousands atoms confined by lasers in the laboratory.
+Turbulence shapes patterns and properties of fluids of all
+kinds, from ordinary
+ viscous fluids (Navier-Stokes turbulence\cite{frisch1995}) 
+to electrically conducting fluids (magneto-hydrodynamics turbulence
+\cite{canuto-dalsgaard-1998}) to quantum fluid
+(quantum turbulence \cite{barenghi-etal-2023,
+Barenghi_Skrbek_Sreenivasan_2023}).
+All turbulent systems are characterised by 
+the existence of a wide range 
+of length scales across which inviscid conserved quantities 
+are transferred without loss in the spirit of the cascade 
+depicted by Richardson \cite{richardson1922weather}. 
 
-Remarkably, the same cascade phenomenology is observed in turbulent flows of quantum fluids, {\textit{i.e.} fluids whose characteristics are governed by quantum mechanical constraints which kick in at very low temperatures. Examples of such fluids are superfluid helium and Bose-Einstein Condensates (BECs). 
-The dynamics of quantum fluids can be successfully depicted in terms of a two-fluid model \cite{tisza-1938,landau-1949,skrbek-sreenivasan-2012} describing quantum fluids as a mixture of two inseparable fluid components, the superfluid and the thermal component, which interact by means of a mutual friction force \cite{jackson-etal-2009,hall-vinen-1956a,hall-vinen-1956b}. The superfluid component is capable of flowing without viscosity and is characterised by vanishing entropy, while its vorticity is
-entirely confined to effectively one-dimensional structures of atomic core size, the so-called quantum vortices, 
+In three-dimensional classical fluids, turbulence 
+is characterised by a forward cascade: the
+non-linear dissipationless transfer of kinetic energy from the scale of
+the large eddies (at which energy is injected) to the smallest length scales
+at which energy is dissipated into heat
+\cite{richardson1922weather,kolmogorov-1941}. 
+The resulting distribution of energy across length scales is
+the celebrated Kolmogorov energy spectrum 
+\cite{kolmogorov-1941,frisch1995}. 
+
+Confining Navier-Stokes turbulence to two-dimensions entails 
+fundamentally distinct physics: a dual cascade emerges of energy and enstrophy 
+(mean squared vorticity) \cite{kraichnan-1967,boffetta-ecke-2012}, 
+the two conserved quantities in ideal two-dimensional flows.
+% \red{(in
+%three dimensions the conserved quantities are energy and helicity)}. 
+In particular, while the enstrophy cascade is direct (from large to small
+scales), the energy cascade is inverse (from small to large scales)
+\cite{boffetta-musacchio-2010}. This inverse cascade 
+may favour the generation and persistence of large coherent 
+structures \cite{laurie-etal-2014}. 
+
+Remarkably, the same cascade phenomenology is observed in turbulent flows 
+of quantum fluids, {\textit{i.e.} fluids at very low temperatures whose physics is
+dominated by quantum effects.
+Examples of such fluids are superfluid helium 
+and atomic Bose-Einstein Condensates (BECs). 
+The dynamics of these systems can be successfully depicted in terms of 
+a two-fluid model \cite{tisza-1938,landau-1949,skrbek-sreenivasan-2012} 
+describing the quantum fluid as the mixture of two components, 
+the superfluid component and the thermal (or normal) component, which 
+interact by means of a mutual friction force 
+\cite{jackson-etal-2009,hall-vinen-1956a,hall-vinen-1956b}. 
+The superfluid component flows without viscosity and
+vanishing entropy; its vorticity is
+confined to effectively one-dimensional vortex filaments
+of atomic core thickness (called quantum vortices or vortex lines), 
 around which the circulation of the velocity is quantised.
-The thermal component can be described as a ballistic gas of thermally excited elementary excitations in the context of BECs or as an almost ordinary (classical) viscous fluid 
-%carrying the whole entropy of the fluid 
-in low temperature helium-4. Despite these significant differences with respect to classical fluids, 
-a forward kinetic energy cascade is indeed observed in three-dimensional quantum turbulence in superfluid helium 
-\cite{maurer1998,salort2010turbulent,baggaley2012,sherwin-robson2015} and an inverse energy cascade characterises two-dimensional BECs, as shown in theoretical \cite{bradley2012energy,reeves2013,simula2014emergence} and experimental \cite{johnstone2019evolution,gauthier2019giant} studies.
+In BECs the thermal component forms a ballistic gas,
+whereas in superfluid $^4$He it can be described as
+a classical viscous fluid.
+Despite these significant differences with respect to ordinary fluids, 
+the forward kinetic energy cascade has
+indeed been observed in three-dimensional superfluid
+turbulence 
+\cite{maurer1998,salort2010turbulent,baggaley2012,sherwin-robson2015}.
+Evidence of this forward cascade has been found also in
+three-dimensional turbulent BECs \cite{middleton-spencer2022}.
+An inverse energy cascade characterises two-dimensional BECs, 
+as shown in theoretical \cite{bradley2012energy,reeves2013,simula2014emergence} and experimental \cite{johnstone2019evolution,gauthier2019giant} studies.
 
-The idea that the direction of the energy cascade is determined by the dimensionality of the flow and its invariants has been a longstanding belief. However,
-recent studies have demonstrated that in three-dimensional classical turbulence, 
-the direction of the energy cascade may be controlled by governing the chirality of the 
-flow, \textit{i.e.} the balance between the predominance in the flow of positive or negative helical modes and their interactions. 
-Indeed, by restricting the non-linear energy transfer to homochiral interactions via a suitable decimation of the Navier-Stokes equations, 
+The idea that the direction of the energy cascade is determined 
+by the dimensionality of the flow and its invariants has been a 
+longstanding belief. However, recent studies have demonstrated that 
+in three-dimensional classical turbulence, the direction of the energy 
+cascade may be controlled by governing the chirality of the 
+flow, \textit{i.e.} the balance between 
+%the predominance in the flow of 
+positive or negative helical modes \cite{moffatt1969} and their interactions. 
+Indeed, by restricting the non-linear energy transfer to homochiral interactions via a suitable decimation of the Navier-Stokes equation 
 \cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013}, controlling the weight of homochiral interactions \cite{sahoo-etal-2017} or the external injection 
 of positive helical modes at all length scales \cite{plunianInverseCascadeEnergy2020a}, inverse energy cascades have been observed in three-dimensional turbulence
-of classical fluids. In brief, when the the flow is synthetically designed to have an enhanced chirality, an inverse energy cascade can observed.
+of classical fluids. In brief, when the flow is synthetically designed to have an enhanced chirality, an inverse energy cascade can observed.
 
-In this work, we unveil a similar dynamics occuring in superfluid helium-4 as a result of a vortex reconnection, an intrinsic event in quantum fluids
-where two superfluid vortices collide exchanging vortex strands, altering the overall topology of the flow
+In this work, we unveil a similar dynamics occuring in superfluid helium
+($^4$He) as a result of vortex reconnections.  
+Reconnections occur continuously in turbulence: they occur when
+two vortex lines collide and recombine, exchanging heads and tails, 
+altering the overall topology of the flow
 \cite{koplik-levine-1993,bewley-etal-2008,rorai-etal-2016,serafini-etal-2017,galantucci-baggaley-parker-barenghi-2019,villois2020irreversible}. 
-Indeed, we show that the mutual friction force arising from the quantum vortex reconnection is chiral, injecting in the normal fluid prevalently helicity of
-a given sign. Thus, as a result of a vortex reconnection in superfluids, we observe an increase of the chiral imbalance of the flow, producing a transfer of
-kinetic energy from small to large scales, similarly to the phenomenology observed in classical flows. Importantly, we stress that this chiral imbalance
-arises naturally in the normal fluid, \textit{i.e.} as a result of vortex reconnections, ordinary events in superfluids triggered by small-scale
-quantum pressure dynamics. This is contrast to classical fluid dynamics, where the helical characteristics of the flows producing 
+Indeed, we show that the mutual friction force arising from the  
+vortex reconnection is chiral, injecting in the normal fluid prevalently 
+helicity of a given sign. 
+Thus, as a consequence of vortex reconnections,
+we observe an increase of the chiral imbalance of 
+the quantum turbulence, producing a transfer of
+kinetic energy from small to large scales, similarly to the 
+phenomenology observed in classical flows. 
+Importantly, this chiral imbalance
+arises naturally in the normal fluid 
+as a result of vortex reconnections.
+This is contrast to classical fluid dynamics, 
+where the helical characteristics of the flows producing 
 an inverse energy transfer require a careful synthetic construction 
 \cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013,sahoo-etal-2017,plunianInverseCascadeEnergy2020a}.
 
@@ -193,39 +267,88 @@ an inverse energy transfer require a careful synthetic construction
 \begin{figure}[b]
     \centering
     \includegraphics*[width=0.48\textwidth]{energy-spec.pdf}
-    \caption{Normal fluid kinetic energy spectrum $E(k)$ before reconnection (dashed lines), at reconnection (solid lines) and after reconnection (dotted lines) for $T=1.9K$ and $T=2.1K$. \emph{Inset:} Energy injection spectrum $I(k)$ arising from the mutual friction forcing at the same snapshots in time.}
+    \caption{Normal fluid kinetic energy spectrum $E(k)$ before 
+reconnection (dashed lines), at reconnection (solid lines) 
+and after reconnection (dotted lines) for $T=1.9K$ (red)
+and $T=2.1K$ (blue). 
+\emph{Inset:} Energy injection spectrum $I(k)$ arising from the 
+mutual friction forcing at the same times as in the main figure.}
     \label{fig:kinetic-energy}
 \end{figure}
 
-In this Letter, to model superfluid helium's dynamics, we employ the recently developed FOUCAULT algorithm \cite{galantucciNewSelfconsistentApproach2020b}. This model parametrises superfluid vortex lines as one-dimensional space curves $\s(\xi,t)$, $\xi$ and $t$ being arclength and time respectively, exploiting the large seperation of length scales between the vortex core, the discretisation of vortex filaments $\Delta\xi$ and the average radius of curvature $R_c$ of vortex lines. Vortices evolve according to the following equation of motion 
+To model superfluid helium dynamics, we employ 
+the recently developed FOUCAULT code
+\cite{galantucciNewSelfconsistentApproach2020b}. 
+In this approach, superfluid vortex lines are
+parametrized as one-dimensional space curves 
+$\s(\xi,t)$, $\xi$ and $t$ being arclength and time respectively, 
+exploiting the large seperation of length scales between the vortex core radius, 
+the Lagrangian discretisation along the vortex lines $\Delta\xi$,
+and the average radius of curvature $R_c$ of the vortex lines. 
+The vortex lines evolve according to the following equation of motion:
 \begin{equation}
     \dot{\s}(\xi,t) = \v_s + \frac{\beta}{1+\beta}\left[\v_{ns}\cdot\s'\right]\s' + \beta\s'\times\v_{ns} + \beta'\s'\times\left[\s'\times\v_{ns}\right],
 \end{equation}
-where $\dot{\s} = \partial\s/\partial t$, $\s' = \partial\s/\partial\xi$ is the unit tangent vector, $\v_n$ and $\v_s$ are the normal fluid and superfluid velocities at $\s$, $\v_{ns} = \v_n-\v_s$, and $\beta,\, \beta'$ are temperature and Reynolds number dependent mutual friction coefficients \cite{galantucciNewSelfconsistentApproach2020b}.The calculation of the superfluid velocity $\v_s$ is performed via the computation of the Biot-Savart integral de-singularised with standard techniques (see Supplementary Material \cite{suppMat}). The normal fluid is described classically using the incompressible ($\nabla\cdot\v_n=0$) Navier-Stokes equations
+where $\dot{\s} = \partial\s/\partial t$, $\s' = \partial\s/\partial\xi$ is the unit tangent vector, $\v_n$ and $\v_s$ are the normal fluid and superfluid velocities at $\s$, $\v_{ns} = \v_n-\v_s$, and $\beta,\, \beta'$ are temperature and Reynolds number dependent mutual friction coefficients \cite{galantucciNewSelfconsistentApproach2020b}. The calculation of the superfluid velocity $\v_s$ is performed via the computation of the Biot-Savart integral de-singularised with standard techniques (see Supplementary Material \cite{suppMat}). The normal fluid is described classically using the incompressible ($\nabla\cdot\v_n=0$) 
+Navier-Stokes equation
 \begin{equation}
     \frac{\partial\v_n}{\partial t} + (\v_n\cdot\nabla)\v_n = -\frac{1}{\rho}\nabla p  + \nu_n\nabla^2\v_n + \frac{\mathbf{F}_{ns}}{\rho_n} \; \; , 
 \end{equation}
-where $\mathbf{F}_{ns}$ is the coupling mutual friction force per unit volume, $\rho=\rho_n + \rho_s$, where $\rho_n$ and $\rho_s$ are the normal fluid and superfluid densities, $p$ is the pressure and $\nu_n$ is the kinematic viscosity of the normal fluid. We define the mutual friction force $\mathbf{F}_{ns}$ as the line integral of the mutual friction per unit length $\mathbf{f}_{ns}$ \cite{suppMat},
-\begin{equation}
-    \mathbf{F}_{ns}(\x) = \oint_{\mathcal{T}}\delta(\x-\s)\mathbf{f}_{ns}(\s)d\xi     
-\end{equation}
-$\mathcal{T}$ representing the entire vortex geometry. The regularisation of mutual friction is performed using a physically self-consistent scheme \cite{galantucciNewSelfconsistentApproach2020b, gualtieri2015exact, gualtieri2017turbulence}.
 
-To study the reconnection dynamics, we set two pairs of orthogonal vortices, where corresponding vortices in each pair have oppposite circulation in order to preserve superfluid periodicity along the boundaries, and we consider two distinct temperatures, $T=1.9K$ and $T=2.1K$. Vortex pairs are seperated by distance $D_{\ell}$, and each vortex within each pair is seperated by distance $d_{\ell}$, such that $d_{\ell}\ll D_{\ell}$. The seperation of scales ensures that the dynamics in the vicinity of the reconnection are dominated by local interactions, and that far-reaching contributions from the other vortex pair are neglible. The evolution of the vortex reconnection of a single pair is reported in Fig. \ref{fig:visualisation}. 
+\noindent
+where 
+$\rho_n$ and $\rho_s$ are the normal fluid and superfluid densities,
+$\rho=\rho_n + \rho_s$,  $p$ is the pressure,  $\nu_n$ is the kinematic 
+viscosity of the normal fluid, and the mutual friction force per unit
+volume, $\mathbf{F}_{ns}$, is the line integral of the mutual friction 
+force per unit length, $\mathbf{f}_{ns}$ \cite{suppMat}:
+
+\begin{equation}
+\mathbf{F}_{ns}(\x) = 
+\oint_{\mathcal{T}}\delta(\x-\s)\mathbf{f}_{ns}(\s)d\xi,     
+\end{equation}
+$\mathcal{T}$ representing the entire vortex configuration. 
+The regularisation of mutual friction is performed using a physically self-consistent scheme \cite{galantucciNewSelfconsistentApproach2020b, gualtieri2015exact, gualtieri2017turbulence}.
+
+To study the reconnection dynamics, we consider
+two pairs of initially orthogonal vortices 
+(where the corresponding vortices of each pair have opposite circulation 
+in order to preserve periodicity along the boundaries)
+at two temperatures, $T=1.9K$ and $T=2.1K$. The vortex pairs are 
+separated by the distance $D_{\ell}$; each vortex within each pair is 
+initially at distance $d_{\ell}$ to the other vortex, 
+such that $d_{\ell}\ll D_{\ell}$ to ensures that the dynamics 
+in the vicinity of the reconnection is dominated by local interactions, 
+and that the far-field contribution from the other vortex pair is
+neglible. The evolution of the vortex reconnection of a single pair is reported in Fig. \ref{fig:visualisation}. 
 \begin{figure}[t]
     \centering
     \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
-\caption{\emph{Top:} Mutual friction injection spectrum $I_k$. \emph{Bottom:} Spectral normal fluid kinetic energy flux $\Pi_E$. \emph{Inset:} Post reconnection evolution of the integral length scale $\mathcal{L}_E$.}
+\caption{\emph{Top:} Mutual friction injection spectrum, $I_k$. 
+\emph{Bottom:} Spectral normal fluid kinetic energy flux, $\Pi_E$. 
+\emph{Inset:} Post reconnection evolution of the integral length scale, $\mathcal{L}_E$.
+Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
 \label{fig:energy-flux}
 \end{figure}
 
-We first focus the attention on the time evolution of the energy spectrum $E$, illustrated in Fig.~\ref{fig:kinetic-energy}, where it emerges clearly that  
-during vortex reconnections, energy is predominantly injected into the normal fluid at intermediate and small length scales: 
-for wavenumbers $|\mathbf{k}| = k>10$, a significative increase in energy spectral density can be observed in correspondence of reconnection time $t_0$, 
-namely $E(k,\, t\approx t_0)/E(k,\, t\ll t_0)\sim 10^2$. In the post-reconnection regime, we simultaneously observe a small decay of the spectrum at intermediate 
-and small scales ($k > 5$) and its increase at large scales, suggesting a possible mechanism by 
-which energy generated at small length scales is transferred to larger scales. To shed light on this energy spectrum time evolution triggered by reconnections,
-we analyse the dynamics of the normal fluid flow in terms of the spectral energy budget equation 
+We first focus the attention on the time evolution of the normal fluid
+energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional
+wavenumber), illustrated 
+in Fig.~\ref{fig:kinetic-energy}, where it clearly emerges that,
+during the reconnection, energy is predominantly injected into the 
+normal fluid at intermediate and small length scales. 
+For $k>010$ in correspondence of the reconnection time $t_0$,
+we observe a significant increase of the normal fluid energy spectral density:
+$E(k,\, t\approx t_0)/E(k,\, t\ll t_0) \approx 10^2$. 
+
+In the post-reconnection regime, we simultaneously observe a small 
+decrease of the spectrum at intermediate 
+and small scales ($k > 5$) and an increase at large scales, 
+suggesting the existence of a mechanism by 
+which energy generated at small length scales is transferred to larger scales. 
+To shed light on this mechanism
+we analyse the dynamics of the normal fluid flow using the 
+spectral energy budget equation: 
 
 \begin{equation}
     \frac{\partial E(k)}{\partial t} = T(k) - D(k) + I(k)
@@ -234,48 +357,106 @@ where $T(k)$ is the spectral kinetic energy transfer function,
 %(\textit{i.e.} $T(k)dk$ is the energy transfered per unit time by modes with $k < |\mathbf{k}| < k +dk$, determined by non-linear effects), 
 $D(k)=2\nu_n k^2 E_k$ is the dissipation spectrum and
 %=\mathrm{Re}(\hat{\mathbf{F}}_{ns}(\k)\cdot\hat{\v}^*(\k))$ 
-$I(k)$ is the injection spectrum arising from the mutual friction force $\mathbf{F}_{ns}$. During vortex reconnections, abrupt changes occur in the 
-topology of vortex lines, forming highly curved cusps which immediately relax in structures with small radii of curvature $R_c$. 
-As $|\mathbf{F}_{ns}| \propto  |\dot{\s}-\v_n| \approx |\dot{\s}| \propto 1/R_c$, the resulting scales of energy injection at reconnection are correspondingly much smaller than the large scales, as it can be observed in the inset of Fig.~\ref{fig:kinetic-energy}. 
-As time evolves, the smallest perturbations on the vortex lines are damped by friction the fastest, resulting in the peak of the injectrum spectrum $I(k)$ to slightly shift towards larger length scales. This shift of the peak of $I(k)$ and its magnitude do not however account 
-for the increase of $E(k)$ observed at the largest scales after reconnection. This increase of energy at the largest scales stems in fact from 
-the energy transfer arising from non linear effects. Indeed, if we compute the energy flux $\displaystyle \Pi(k) = \int_{k}^{\infty}T(k') dk'$ (reported in Fig.~\ref{fig:energy-flux} at different times and temperatures), we observe that $\Pi(k) < 0$ for all $k$ during and after reconnection, 
-with a peak of $|\Pi(k)|$ in the range $5 < k < 15$ when reconnection occurs. This is the evidence of a flux of kinetic energy from small to large scales: 
-\textit{i.e.} vortex reconnections at $T>0$ trigger an inverse transfer of energy. The effect of kinetic energy transferral to large length scales results in the creation of large scale structures, evident in the evolution of the integral length scale $\mathcal{L}$, where
+$I(k)$ is the injection spectrum arising from the mutual friction 
+force $\mathbf{F}_{ns}$. 
+Immediately after the reconnection, each vortex has the shape of
+a sharp cusp (corresponding to a small radius of curvature $R_c$)
+which immediately starts relaxing ($R_c$ increases). Since
+$|\mathbf{F}_{ns}| \propto  |\dot{\s}-\v_n| \approx |\dot{\s}| \propto 1/R_c$, 
+the scales of energy injection at reconnection are necessarily
+much smaller than the original length scales before the reconnection, 
+as it can be observed in the inset of Fig.~\ref{fig:kinetic-energy}. 
+As time evolves, the smallest perturbations on the vortex lines are damped 
+by friction the fastest, resulting in the shift of 
+the peak of the injection spectrum $I(k)$ towards larger length scales. 
+However this shift does not account 
+for the increase of $E(k)$ at the largest scales after reconnection, 
+which arises from non-linear effects.
+Indeed, if we compute the energy flux 
+$\displaystyle \Pi(k) = \int_{k}^{\infty}T(k') dk'$ 
+(reported in Fig.~\ref{fig:energy-flux} at different times and temperatures), 
+we observe that $\Pi(k) < 0$ for all $k$ during and after reconnection;
+we also observe that, near the time of reconnection,
+the peak value of $|\Pi(k)|$ is in the range $5 < k < 15$.
+The negative sign of $\Pi(k)$ is evidence of a flux of kinetic 
+energy from small to large scales. In other words, at non-zero temperatures,
+vortex reconnections trigger an inverse transfer of energy, 
+which implies the creation of large scale structures, visible
+in Fig.~\ref{fig:visualisation}} 
+This effect is quantified by
+the evolution of the integral length scale $\mathcal{L}$, 
+defined as
+
 \begin{equation}
     \mathcal{L} = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk
 \end{equation}
-and $K$ represents the total turbulent kinetic energy, $K=\int_0^{\infty}\!\!E(k)dk$. In the inset of Fig.~\ref{fig:energy-flux}, $\mathcal{L}$ steadily increases in the post-reconnection region, implying a generation of large scale structure. 
+
+\noindent
+where $K=\int_0^{\infty}\!\!E(k)dk$ is the total turbulent kinetic
+energy. The inset of Fig.~\ref{fig:energy-flux} shows that
+$\mathcal{L}$ steadily increases in the post-reconnection regime,
+implying generation of large scale structures. 
 
 \begin{figure}[b]
     \centering
     \includegraphics*[width=0.48\textwidth]{fmfDecompFig.pdf}
-    \caption{The ratio of the projected helical mutual friction modes $f^+(k)$ and $f^-(k)$}
+    \caption{The ratio of the projected helical mutual friction modes $f^+(k)$ and $f^-(k)$
+at different times and temperatures as in Fig.~\ref{fig:kinetic-energy}}.
     \label{fig:mutual-friction-decomp}
 \end{figure}
 
+To explain the inverse energy transfer shown in Fig.~\ref{fig:kinetic-energy},
+we look whether the reconnection triggers a chirality imbalance. 
+We decompose the incompressible Fourier modes of the normal fluid velocity 
+into helical modes \cite{waleffe-1992}:
 
-In order to explain the observed inverse energy transfer mechanism with a classical argument, 
-we look whether the reconnection process triggers a chirality imbalance. To tackle this issue we use the standard helical decomposition \cite{waleffe-1992} 
-of the incompressible Fourier modes of the normal fluid velocity $\hat{\mathbf{v}}_n(\k)$ and of the mutual friction force $\hat{\mathbf{F}}_{ns}^{\perp}(\k)$ 
-(the  Fourier modes of $\mathbf{F}_{ns}$ parallel to the wavemumber $\k$ do not play any role in the time evolution of $\mathbf{v}_n$ due to the incompressible 
-constraint). According to this helical decomposition, 
-$\hat{\mathbf{v}}_n (\k) = \hat{\mathbf{v}}_n^+(\k) +\hat{\mathbf{v}}_n^-(\k) = v_n^+(\mathbf{k},t) \mathbf{h}^+(\mathbf{k}) + v_n^-(\mathbf{k},t) \mathbf{h}^-(\mathbf{k})$, 
-where $\mathbf{h}^\pm (\mathbf{k})$ are the two eigenvectors of the curl operator, \textit{i.e.} $i\k~\times~\h^{\pm}(\k)~=~\pm k \h^{\pm}(\k)$. Accordingly, for the mutual friction force, $\hat{\mathbf{F}}_{ns}^{\perp} = f^+ \mathbf{h}^+ + f^- \mathbf{h}^-$. 
+\begin{equation}
+\hat{\mathbf{v}}_n (\k) = \hat{\mathbf{v}}_n^+(\k) +\hat{\mathbf{v}}_n^-(\k)=
+ v_n^+(\mathbf{k},t) \mathbf{h}^+(\mathbf{k})+v_n^-(\mathbf{k},t) \mathbf{h}^-(\mathbf{k}),
+\end{equation}
+
+\noindent 
+where $\mathbf{h}^\pm (\mathbf{k})$ are the two eigenvectors of the curl 
+operator, \textit{i.e.} $i\k~\times~\h^{\pm}(\k)~=~\pm k \h^{\pm}(\k)$. 
+Similarly, we decompose the Fourier of the transverse mutual friction force:
+$\hat{\mathbf{F}}_{ns}^{\perp} = f^+ \mathbf{h}^+ + f^- \mathbf{h}^-$
+(the  Fourier modes of $\mathbf{F}_{ns}$ parallel to the wavemumber 
+$\k$ do not play any role in the time evolution of $\mathbf{v}_n$ 
+due to the incompressible constraint). 
 The spectral energy densities corresponding to the helical modes are
-$E^{\pm}(\k) = (1/2) |v_n^\pm(\k)|^2$, the total spectral density being $E(\k) = E^{+}(\k) + E^{-}(\k)$, and the spectral helicity density is 
-$H(\k) = (1/2) \hat{\mathbf{v}}_n (\k)\!\!\! ~\cdot~\!\!\! \hat{\bm{\omega}}_n^* (\k) = k E^+(\k) - k E^-(\k) = H^+(\k) - H^-(\k)$, 
-where $\bm{\omega}_n$ is the normal fluid vorticity, `$^\ast$' indicates the complex conjugate and 
-$H^\pm$ is the helicity contribution of each separate helical mode. 
-The rate of change $I^\pm(\k)$ of the energies $E^{\pm}$ arising from the mutual friction is proportional to the corresponding force helical coefficients
-$f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, and the related signed helicity injection is 
-$I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. A chiral imbalance is hence generated if the mutual friction force is helical, 
-\textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$. In Fig.~\ref{fig:mutual-friction-decomp}, we show the spectra of $|f^+|^2/|f^-|^2$, before, during and after 
-the reconnection event for both working temperatures: it clearly emerges that during and after the reconnection, the mutual friction force is chiral,
-injecting more positive helicity than negative helicity. As a result, the ratio $\mathcal{H}^+/\mathcal{H}^-$ 
-(reported in the inset of Fig.~\ref{fig:mutual-friction-decomp}, where $\mathcal{H}^\pm (t) = \int\!\!H^\pm(\k,t)d\k$) 
-increases significantly at reconnection and remains larger than unity even at later times, indicating that the flow is chiral, hence identifying the physical
-mechanism responsible for the inverse energy transfer observed as a result of the reconnection. 
+$E^{\pm}(\k) = (1/2) |v_n^\pm(\k)|^2$, the total spectral density 
+being $E(\k) = E^{+}(\k) + E^{-}(\k)$. Similarly the spectral helicity 
+density is 
+
+\begin{equation}
+\begin{split}
+H(\k) & = (1/2) \hat{\mathbf{v}}_n (\k)\!\!\! ~\cdot~\!\!\! \hat{\bm{\omega}}_n^* (\k) = \\
+& = k E^+(\k) - k E^-(\k)  = H^+(\k) - H^-(\k),
+\end{split}
+\end{equation}
+
+\noindent 
+where $\bm{\omega}_n$ is the normal fluid vorticity, the star indicates 
+complex conjugate and $H^\pm$ is the helicity contribution of each 
+separate helical mode. 
+The rate of change $I^\pm(\k)$ of the energies $E^{\pm}(\k)$ arising from the mutual 
+friction is proportional to the corresponding helical coefficients
+$f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, 
+and the related signed helicity injection is 
+$I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. 
+
+A chiral imbalance occurs if the mutual friction force is helical, 
+\textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$. 
+In Fig.~\ref{fig:mutual-friction-decomp}, we show the spectra of $|f^+|^2/|f^-|^2$, 
+before, during and after the reconnection for both temperatures. It is apparent
+that during and after the reconnection, the mutual friction force is chiral,
+injecting more positive helicity than negative helicity. 
+As a result, the ratio $\mathcal{H}^+/\mathcal{H}^-$ 
+(reported in the inset of Fig.~\ref{fig:mutual-friction-decomp}), 
+where $\mathcal{H}^\pm (t) = \int\!\!H^\pm(\k,t)d\k$), 
+increases significantly at reconnection and remains larger than unity even at later times, 
+indicating that the flow is chiral. We conclude that the reconnection triggers indeed
+a chiral imbalance.
 %Furthermore, as observed in
 %Ref.~\cite{plunianInverseCascadeEnergy2020a}, to observe a negative energy flux the forcing needs to cover the entire spectrum of $k$, which  from the inset of Fig.~\ref{fig:kinetic-energy}, it is evident that this indeed the case.
 
@@ -289,14 +470,15 @@ mechanism responsible for the inverse energy transfer observed as a result of th
 %where $E^{\pm}=\frac{1}{2}|\v^{\pm}(\k)|^2$ are the helical energy modes. The evolution of the ratio $\mathcal{H}^+/\mathcal{H}^-$ is shown in the inset of Fig.~\ref{fig:mutual-friction-decomp}. The sharp increase at reconnection time $t_0$ is evidence of a large influx of positive helical modes as a result of the vortex reconnection, which is in agreement with the conditions to facilitate an inverse energy transfer by a helical injection. Finally, as observed in Ref.~\cite{plunianInverseCascadeEnergy2020a}, it is necessary for the forcing to cover the entire spectrum of $k$, which from the inset of Fig.~\ref{fig:kinetic-energy}, it is evident that this indeed the case.           
 
 %\paragraph*{Closing remarks.---}
-In this Letter, we show that in superfluid helium, in the two-fluid regime ($T\gtrsim 1.5$K), the reconnection of superfluid vortices not only injects punctuated
-energy in the normal fluid \cite{stasiak2024quantum}, but also triggers in the latter a kinetic energy trasfer towards large scales. This inverse 
-energy transfer arises from the fact that the mutual friction force injecting energy and helicity in the normal fluid is helical due to the development of Kelvin 
-waves on the vortices as a result of the reconnection itself, which is intrinsic event in superfluid dynamics. This helical character 
-of the mutual friction produces a chiral imbalance in the normal fluid which, similarly to what occurs in classical turbulent flows
-\cite{biferaleInverseEnergyCascade2012a,plunianInverseCascadeEnergy2020a}, induces a net flux
-of energy towards the large scales of the flow. 
-
+In conclusion, the reconnection of quantum vortices in the two-fluid regime
+($T\gtrsim 1.5$K) not only injects punctuated
+energy in the normal fluid \cite{stasiak2024quantum}, but also triggers in the normal fluid
+a transfer of kinetic energy towards the large scales. This inverse 
+energy transfer arises from the fact that the mutual friction force (injecting energy and 
+helicity in the normal fluid) is helical, as Kelvin waves develop on the vortices.
+The helical character of the mutual friction produces a chiral imbalance in the normal fluid, driving this inverse cascade as previously observed in turbulent Navier-Stokes flows
+\cite{biferaleInverseEnergyCascade2012a,plunianInverseCascadeEnergy2020a}.
+Our findings have profound implications for the nature of finite temperature superfluid turbulence and motivate a detailed studied of fully coupled quantum turbulence to understand how energy transfer and dissipation is augmented by vortex reconnections.
 
 \bibliography{references}% Produces the bibliography via BibTeX
 \end{document}

@@ -251,10 +251,7 @@ we observe an increase of the chiral imbalance of
 the quantum fluid, producing a transfer of
 kinetic energy from small to large scales, similarly to the 
 phenomenology observed in 3D helical-decimated classical flows. 
-Importantly, this chiral imbalance
-arises naturally in the normal fluid 
-as a result of vortex reconnections.
-This is contrast to classical fluid dynamics, 
+Importantly, this chiral imbalance arises naturally as physical process in the normal fluid as a result of vortex reconnections. This is contrast to classical fluid dynamics, 
 where the helical characteristics of the flows producing 
 an inverse energy transfer require a careful synthetic construction 
 \cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013,sahoo-etal-2017,plunianInverseCascadeEnergy2020a}.
@@ -276,20 +273,13 @@ reconnection (dashed lines), at reconnection (solid lines)
 and after reconnection (dotted lines) for $T=1.9K$ (red)
 and $T=2.1K$ (blue). 
 \emph{Inset:} Energy injection spectrum $I(k)$ arising from the 
-mutual friction forcing at the same times as in the main figure.}
+mutual friction forcing at the same times as in the main figure.\NOTE{GK: units of $k$?}}
     \label{fig:kinetic-energy}
 \end{figure}
 
-To model superfluid helium dynamics, we employ 
-the recently developed FOUCAULT model
-\cite{galantucciNewSelfconsistentApproach2020b}. 
-In this approach, superfluid vortex lines are
-parametrized as one-dimensional space curves 
-$\s(\xi,t)$, $\xi$ and $t$ being arclength and time respectively, 
-exploiting the large seperation of length scales between the vortex core radius, 
-the Lagrangian discretisation along the vortex lines $\Delta\xi$,
-and the average radius of curvature $R_c$ of the vortex lines. 
-The vortex lines evolve according to the following equation of motion:
+To model superfluid helium dynamics, we employ the recently developed FOUCAULT model
+\cite{galantucciNewSelfconsistentApproach2020b}.  In this approach, superfluid vortex lines are
+parametrized as one-dimensional space curves  $\s(\xi,t)$, $\xi$ and $t$ being arclength and time respectively, exploiting the large separation of length scales between the vortex core radius, the Lagrangian discretisation along the vortex lines $\Delta\xi$, and the average radius of curvature $R_c$ of the vortex lines. The vortex lines evolve according to the following equation of motion:
 \begin{equation}
     \dot{\s}(\xi,t) = \v_s + \frac{\beta}{1+\beta}\left[\v_{ns}\cdot\s'\right]\s' + \beta\s'\times\v_{ns} + \beta'\s'\times\left[\s'\times\v_{ns}\right],
 \end{equation}
@@ -324,7 +314,7 @@ initially at distance $d_{\ell}$ to the other vortex,
 such that $d_{\ell}\ll D_{\ell}$ to ensures that the dynamics 
 in the vicinity of the reconnection is dominated by local interactions, 
 and that the far-field contribution from the other vortex pair is
-neglible. The evolution of the vortex reconnection of a single pair is reported in Fig. \ref{fig:visualisation}. 
+neglible. \NOTE{GK: add a very short description of numerical parameters.} The evolution of the vortex reconnection of a single pair is reported in Fig. \ref{fig:visualisation}. 
 \begin{figure}[t]
     \centering
     \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
@@ -335,12 +325,7 @@ Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
 \label{fig:energy-flux}
 \end{figure}
 
-We first focus the attention on the time evolution of the normal fluid
-energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional
-wavenumber), illustrated 
-in Fig.~\ref{fig:kinetic-energy}, where it clearly emerges that,
-during the reconnection, energy is predominantly injected into the 
-normal fluid at intermediate and small length scales. 
+We first focus the attention on the time evolution of the normal fluid energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional wavenumber), illustrated in Fig.~\ref{fig:kinetic-energy}. It clearly emerges that, during the reconnection, energy is predominantly injected into the normal fluid at intermediate and small length scales. 
 For $k>5$ in correspondence of the reconnection time $t_0$,
 we observe a significant increase of the normal fluid energy spectral density:
 $E(k,\, t\approx t_0)/E(k,\, t\ll t_0) \approx 10^2$. 
@@ -389,13 +374,10 @@ which implies the creation of large scale structures, visible
 in Fig.~\ref{fig:visualisation}} 
 This effect is quantified by
 the evolution of the integral length scale $\mathcal{L}$, 
-defined as
-
+defined as \NOTE{GK: coud we change $\mathcal{L}\to L_0$?}
 \begin{equation}
     \mathcal{L} = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk
 \end{equation}
-
-\noindent
 where $K=\int_0^{\infty}\!\!E(k)dk$ is the total turbulent kinetic
 energy. The inset of Fig.~\ref{fig:energy-flux} shows that
 $\mathcal{L}$ steadily increases in the post-reconnection regime,
@@ -405,7 +387,7 @@ implying generation of large scale structures.
     \centering
     \includegraphics*[width=0.48\textwidth]{fmfDecompFig.pdf}
     \caption{The ratio of the projected helical mutual friction modes $f^+(k)$ and $f^-(k)$
-at different times and temperatures as in Fig.~\ref{fig:kinetic-energy}}.
+at different times and temperatures as in Fig.~\ref{fig:kinetic-energy} \NOTE{GK: lengthscale for $\kappa (t-t_0)$} ?}.
     \label{fig:mutual-friction-decomp}
 \end{figure}
 
@@ -489,7 +471,7 @@ Our findings have profound implications for the nature of finite temperature sup
 
 \begin{acknowledgments}
     G.K. was supported by the Agence Nationale de la Recherche through the project the project QuantumVIW ANR-23-CE30-0024-02.
-    This work has been also supported by the French government, through the UCAJEDI Investments in the Future project managed by the National Research Agency (ANR) with the reference number ANR-15-IDEX-01. P.Z.S. acknowledges the financial support of the UCA ``visiting doctoral student program'' on complex systems. Computations were carried out at the Mésocentre SIGAMM hosted at the Observatoire de la Côte d’Azur.
+    This work has been also supported by the French government, through the UCAJEDI Investments in the Future project managed by the National Research Agency (ANR) with the reference number ANR-15-IDEX-01. P.Z.S. acknowledges the financial support of the UCA ``visiting doctoral student program'' on complex systems. Computations were carried out at the Mésocentre SIGAMM hosted at the Observatoire de la Côte d’Azur\NOTE{GK: true?}.
 
   \end{acknowledgments}
 

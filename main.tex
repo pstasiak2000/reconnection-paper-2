@@ -87,6 +87,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand*{\NOTE}[1]{\textbf{\color{red}[#1]}}
 \newcommand*{\CHANGE}[1]{{\color{brown}#1}}
+\newcommand*{\DEL}[1]{{\color{green}#1}}
 
 
 \begin{document}
@@ -112,12 +113,9 @@
 \begin{abstract}
 We numerically show that during a superfluid vortex reconnection energy is injected 
 into the thermal (normal) component of helium~II at small length scales, but is transferred nonlinearly  to larger length scales, increasing the integral length scale of the normal
-fluid.  We provide an explanation of this inverse energy transfer by decomposing the velocity and 
-the mutual friction (which couples superfluid and normal fluid) into helical modes, showing 
-that the imbalance of homochiral modes results from the punctuated energy and helicity 
-injection during the reconnection. Crucially, the
-chiral imbalance occurs spontaneously from reconnections, unlike ordinary Navier-Stokes turbulence
-where careful external control is required. Finally, we discuss the relevance of our findings to 
+fluid.  We provide an explanation of this inverse energy transfer by decomposing the velocity and the mutual friction (which couples superfluid and normal fluid) into helical modes, showing 
+that the imbalance of homochiral modes results from the punctuated energy and helicity injection during the reconnection. \DEL{Crucially, the chiral imbalance occurs spontaneously from reconnections, unlike ordinary Navier-Stokes turbulence
+where careful external control is required}. Finally, we discuss the relevance of our findings to 
 the problem of superfluid turbulence.
 \end{abstract}
 
@@ -149,7 +147,7 @@ undergoing a vortex reconnection. The red tubes represent
 the superfluid vortex
 lines (the tubes' radii have been greatly exaggerated for visual purposes), 
 and the blue volume rendering represents the scaled normal fluid enstrophy 
-$\bom^2/\bom^2_{max}$. In the third panel, note the Kelvin waves on the superfluid vortices. \NOTE{we lack a discussion of units in the text. $T=?$}}
+$\bom^2/\bom^2_{max}$. In the third panel, note the Kelvin waves on the superfluid vortices. \NOTE{we lack a discussion of units in the text. $T=?$} \NOTE{can we show helicity?}}
     \label{fig:visualisation}
 \end{figure*}
 
@@ -220,11 +218,11 @@ indeed been observed in three-dimensional superfluid
 turbulence 
 \cite{maurer1998,salort2010turbulent,baggaley2012,sherwin-robson2015,Muller_KolmogorovKelvinWave_2020,Muller_IntermittencyVelocityCirculation_2021}.
 Evidence of this forward cascade has been found also in
-three-dimensional turbulent BECs \cite{middleton-spencer2022,Zhu_DirectInverseCascades_2023}. Similarly to 2D classical turbulence, 
+three-dimensional turbulent BECs \cite{middleton-spencer2022}. Similarly to 2D classical turbulence, 
 an inverse energy cascade characterises two-dimensional BECs, 
 as shown in theoretical \cite{bradley2012energy,reeves2013,simula2014emergence,Muller_ExploringEquivalenceTwoDimensional_2024} and experimental \cite{johnstone2019evolution,gauthier2019giant} studies.
 
-In turbulent systems, the type and the number of sign-defined ideal invariants determine the direction of cascades. Indeed, the famous and simple Fjørtoft argument \cite{fjortoft1953changes} predicts in 2D classical turbulence the existence of an inverse energy cascade. Similarly, for 3D wave-turbulent 3D BECs, the Fjørtoft argument predicts an inverse particle and a direct energy cascades. In 3D classical fluids, helicity is not sign-defined and thus only a direct energy cascade is possible. However, recent studies have demonstrated that the direction of the energy 
+In turbulent systems, the type and the number of sign-defined ideal invariants determine the direction of cascades. Indeed, the famous and simple Fjørtoft argument \cite{fjortoft1953changes} predicts in 2D classical turbulence the existence of an inverse energy cascade. Similarly, for 3D wave-turbulent 3D BECs, the Fjørtoft argument predicts an inverse particle and a direct energy cascades, as recently adressed theoretically \cite{Zhu_DirectInverseCascades_2023}. In 3D classical fluids, helicity, which is also an inviscid invariant, is not sign-defined and thus only a direct energy cascade is possible. However, recent studies have demonstrated that the direction of the energy 
 cascade may be inverted by artificially controlling the chirality of the 
 flow, \textit{i.e.} the balance between positive or negative helical modes \cite{moffatt1969}, eventually making helicity almost a sign defined quantity. Indeed, by restricting the non-linear energy transfer to homochiral interactions via a suitable decimation of the Navier-Stokes equation 
 \cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013}, controlling the weight of homochiral interactions \cite{sahoo-etal-2017} or the external injection 
@@ -240,11 +238,11 @@ altering the overall topology of the flow
 Indeed, we show that the mutual friction force arising from the  
 vortex reconnection is chiral, injecting in the normal fluid prevalently 
 helicity of a given sign. Thus, as a consequence of vortex reconnections,
-we observe an increase of the chiral imbalance of the quantum fluid, producing a transfer of kinetic energy from small to large scales, similarly to the 
-phenomenology observed in 3D helical-decimated classical flows. 
-Importantly, this chiral imbalance arises naturally as physical process in the normal fluid as a result of vortex reconnections. This is contrast to classical fluid dynamics,  where the helical characteristics of the flows producing 
-an inverse energy transfer require a careful synthetic construction 
-\cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013,sahoo-etal-2017,plunianInverseCascadeEnergy2020a}.
+we observe an increase of the chiral imbalance of the quantum fluid, producing a transfer of kinetic energy from small to large scales, similarly to the phenomenology observed in 3D helical-decimated classical flows. 
+ Unlike classical fluids, such a chiral imbalance arises naturally as physical process in the normal fluid because of vortex reconnections. 
+%This is contrast to classical fluid dynamics,  where the helical characteristics of the flows producing 
+% an inverse energy transfer require a careful synthetic construction 
+% \cite{biferaleInverseEnergyCascade2012a,biferale-etal-2013,sahoo-etal-2017,plunianInverseCascadeEnergy2020a}.
 
 % WE ADD REFERENCE TO OUR FIRST PAPER LATER IN THE TEXT
 %Punctuated energy injection resulting from the violent nature of vortex reconnections \cite{stasiak2024quantum} pave the way for an imbalance of chirality by multi-scale energy injection.
@@ -263,7 +261,7 @@ reconnection (dashed lines), at reconnection (solid lines)
 and after reconnection (dotted lines) for $T=1.9K$ (red)
 and $T=2.1K$ (blue). 
 \emph{Inset:} Energy injection spectrum $I(k)$ arising from the 
-mutual friction forcing at the same times as in the main figure.\NOTE{GK: units of $k$?}}
+mutual friction forcing at the same times as in the main figure.\NOTE{GK: units of $k$?, the inset could go as pannel (b), it would not change much the aspect ratio.}}
     \label{fig:kinetic-energy}
 \end{figure}
 
@@ -310,7 +308,7 @@ neglible. \NOTE{GK: add a very short description of numerical parameters.} The e
     \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
 \caption{\emph{Top:} Mutual friction injection spectrum, $I_k$. 
 \emph{Bottom:} Spectral normal fluid kinetic energy flux, $\Pi_E$. 
-\emph{Inset:} Post reconnection evolution of the integral length scale, $\mathcal{L}_E$.
+\emph{Inset:} Post reconnection evolution of the integral length scale, $\mathcal{L}_E$ \NOTE{GK:in text is $\mathcal{L}$, what are the units? maybe normalise it by its initia value?} \NOTE{GK: how is the integral scale evolution before reconnection?} \NOTE{GK: we should normalise $\Pi_E$. In general, we use the total dissipation, but here we might use the total mutual friction injection (hopefully the values are of order one...)}.
 Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
 \label{fig:energy-flux}
 \end{figure}
@@ -369,7 +367,7 @@ defined as \NOTE{GK: coud we change $\mathcal{L}\to L_0$?}
     \mathcal{L} = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk
 \end{equation}
 where $K=\int_0^{\infty}\!\!E(k)dk$ is the total turbulent kinetic
-energy. The inset of Fig.~\ref{fig:energy-flux} shows that
+energy\NOTE{GK: why $\pi/2$?}. The inset of Fig.~\ref{fig:energy-flux} shows that
 $\mathcal{L}$ steadily increases in the post-reconnection regime,
 implying generation of large scale structures. 
 
@@ -454,8 +452,9 @@ energy transfer arises from the fact that the mutual friction force (injecting e
 helicity in the normal fluid) is helical, as Kelvin waves develop on the vortices.
 The helical character of the mutual friction produces a chiral imbalance in the normal fluid, driving this inverse cascade as previously observed in turbulent Navier-Stokes flows
 \cite{biferaleInverseEnergyCascade2012a,plunianInverseCascadeEnergy2020a}.
-Our findings have profound implications for the nature of finite temperature superfluid turbulence and motivate a detailed studied of fully coupled quantum turbulence to understand how energy transfer and dissipation is augmented by vortex reconnections.
+Our findings have profound implications \NOTE{GK: which ones?} for the nature of finite temperature superfluid turbulence and motivate a detailed studied of fully coupled quantum turbulence to understand how energy transfer and dissipation is augmented by vortex reconnections.
 
+\NOTE{Can a flow sustain a constant injection with multiple reconnections? Maybe by ring injection? From last peter's plots, the injection last for about $\kappa .1$ (and much less the strong imbalance). How is this time compared with typical reconnection time in experiments? What would be the ultimate turbulent state/spectrum?  }
 
 
 

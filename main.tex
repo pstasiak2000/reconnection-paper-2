@@ -111,11 +111,11 @@
              %  but any date may be explicitly specified
 
 \begin{abstract}
+Vortex reconnections play a fundamental role in fluids and they are typically considered as a mechanism to increase the complexity of classical flows and trigger their small scales. In this work, we show that in superfluids, they can also create large scale structures.
 We numerically show that during a superfluid vortex reconnection energy is injected 
 into the thermal (normal) component of helium~II at small length scales, but is transferred nonlinearly  to larger length scales, increasing the integral length scale of the normal
 fluid.  We provide an explanation of this inverse energy transfer by decomposing the velocity and the mutual friction (which couples superfluid and normal fluid) into helical modes, showing 
-that the imbalance of homochiral modes results from the punctuated energy and helicity injection during the reconnection. \DEL{Crucially, the chiral imbalance occurs spontaneously from reconnections, unlike ordinary Navier-Stokes turbulence
-where careful external control is required}. Finally, we discuss the relevance of our findings to 
+that the imbalance of homochiral modes results from the punctuated energy and helicity injection during the reconnection. Finally, we discuss the relevance of our findings to 
 the problem of superfluid turbulence.
 \end{abstract}
 
@@ -126,7 +126,7 @@ the problem of superfluid turbulence.
 
 \begin{figure*}
 	\centering
-	\begin{subfigure}[b]{0.24\textwidth}
+    \begin{subfigure}[b]{0.24\textwidth}
 		\centering
 		\includegraphics*[width=\textwidth]{snap-1.pdf}
 	\end{subfigure}
@@ -142,17 +142,31 @@ the problem of superfluid turbulence.
 		\centering
 		\includegraphics*[width=\textwidth]{snap-4.pdf}
 	\end{subfigure} \hfill
+    %
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics*[width=\textwidth]{snaps-hel-1.pdf}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics*[width=\textwidth]{snaps-hel-2.pdf}
+	\end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics*[width=\textwidth]{snaps-hel-3.pdf}
+	\end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+		\centering
+		\includegraphics*[width=\textwidth]{snaps-hel-4.pdf}
+	\end{subfigure} \hfill
 	\caption{Three-dimensional rendering of an orthogonal vortex configuration 
 undergoing a vortex reconnection. The red tubes represent
 the superfluid vortex
 lines (the tubes' radii have been greatly exaggerated for visual purposes), 
 and the blue volume rendering represents the scaled normal fluid enstrophy 
-$\bom^2/\bom^2_{max}$. In the third panel, note the Kelvin waves on the superfluid vortices. \NOTE{we lack a discussion of units in the text. $T=?$} \NOTE{can we show helicity?}}
+$\bom^2/\bom^2_{max}$. In the third panel, note the Kelvin waves on the superfluid vortices. \NOTE{ $T=?$} \NOTE{GK: update caption once we decided if we keep both rows. How is helicity scaled?}}
     \label{fig:visualisation}
 \end{figure*}
-
-
-\NOTE{Proposed notation changes to avoid confusions: vortex collection $\mathcal{T}\to\mathcal{L}$ or $\mathcal{C}$, integral scale $\mathcal{L}\to L_0$}
 
 %\paragraph*{Introduction.---} 
 Turbulence is ubiquitous in the universe.  It occurs in systems
@@ -253,17 +267,7 @@ we observe an increase of the chiral imbalance of the quantum fluid, producing a
 
 %\paragraph*{Main results.---} 
 
-\begin{figure}[b]
-    \centering
-    \includegraphics*[width=0.48\textwidth]{energy-spec.pdf}
-    \caption{Normal fluid kinetic energy spectrum $E(k)$ before 
-reconnection (dashed lines), at reconnection (solid lines) 
-and after reconnection (dotted lines) for $T=1.9K$ (red)
-and $T=2.1K$ (blue). 
-\emph{Inset:} Energy injection spectrum $I(k)$ arising from the 
-mutual friction forcing at the same times as in the main figure.\NOTE{GK: units of $k$?, the inset could go as pannel (b), it would not change much the aspect ratio.}}
-    \label{fig:kinetic-energy}
-\end{figure}
+
 
 To model superfluid helium dynamics, we employ the recently developed FOUCAULT model
 \cite{galantucciNewSelfconsistentApproach2020b}.  In this approach, superfluid vortex lines are
@@ -276,44 +280,49 @@ Navier-Stokes equation
 \begin{equation}
     \frac{\partial\v_n}{\partial t} + (\v_n\cdot\nabla)\v_n = -\frac{1}{\rho}\nabla p  + \nu_n\nabla^2\v_n + \frac{\mathbf{F}_{ns}}{\rho_n} \; \; , 
 \end{equation}
-
-\noindent
-where 
-$\rho_n$ and $\rho_s$ are the normal fluid and superfluid densities,
+%
+where $\rho_n$ and $\rho_s$ are the normal fluid and superfluid densities,
 $\rho=\rho_n + \rho_s$,  $p$ is the pressure,  $\nu_n$ is the kinematic 
 viscosity of the normal fluid, and the mutual friction force per unit
 volume, $\mathbf{F}_{ns}$, is the line integral of the mutual friction 
 force per unit length, $\mathbf{f}_{ns}$ \cite{suppMat}:
-
+%
 \begin{equation}
 \mathbf{F}_{ns}(\x) = 
-\oint_{\mathcal{T}}\delta(\x-\s)\mathbf{f}_{ns}(\s)d\xi,     
+\oint_{\mathcal{C}}\delta(\x-\s)\mathbf{f}_{ns}(\s)d\xi,     
 \end{equation}
-$\mathcal{T}$ representing the entire vortex configuration. 
-The regularisation of mutual friction is performed using a physically self-consistent scheme \cite{galantucciNewSelfconsistentApproach2020b, gualtieri2015exact, gualtieri2017turbulence}.
+$\mathcal{C}$ representing the entire vortex configuration. 
+The regularisation of mutual friction is performed using a physically self-consistent scheme \cite{galantucciNewSelfconsistentApproach2020b}. %, gualtieri2015exact, gualtieri2017turbulence}. 
+We consider a periodical box of size $2\pi$ (so that  wavevectors are integers).
 
-To study the reconnection dynamics, we consider
-two pairs of initially orthogonal vortices 
-(where the corresponding vortices of each pair have opposite circulation 
-in order to preserve periodicity along the boundaries)
-at two temperatures, $T=1.9K$ and $T=2.1K$. The vortex pairs are 
-separated by the distance $D_{\ell}$; each vortex within each pair is 
-initially at distance $d_{\ell}$ to the other vortex, 
-such that $d_{\ell}\ll D_{\ell}$ to ensures that the dynamics 
-in the vicinity of the reconnection is dominated by local interactions, 
-and that the far-field contribution from the other vortex pair is
-neglible. \NOTE{GK: add a very short description of numerical parameters.} The evolution of the vortex reconnection of a single pair is reported in Fig. \ref{fig:visualisation}. 
+To study the reconnection dynamics, we consider two pairs of initially orthogonal vortices (where the corresponding vortices of each pair have opposite circulation in order to preserve periodicity along the boundaries)
+at two temperatures, $T=1.9K$ and $T=2.1K$. The vortex pairs are separated by the distance $D_{\ell}$; each vortex within each pair is initially at distance $d_{\ell}$ to the other vortex, such that $d_{\ell}\ll D_{\ell}$ to ensures that the dynamics in the vicinity of the reconnection is dominated by local interactions, and that the far-field contribution from the other vortex pair is negligible.
+
+The evolution of the vortex reconnection of a single pair is reported in Fig.~\ref{fig:visualisation}. 
+The first row shows the reconnecting superfluid vortices (in red) accompanied by normal fluid structures generated by mutual friction, here displayed as enstrophy rendering $\omega(\x)^2=|\nabla\times \v_n|^2$. Such structures are the signature of the violent irreversible energy transfers in vortex reconnections reported in \cite{stasiak2024quantum} \NOTE{GK:remove this sentence if we delete the first row of the figure}. The second row shows the rendering of the local helicity $H(\x)=\v_n\cdot(\nabla\times \v_n )$, where we observe a clear local helicity production, with an abrupt change of sign due to the rearrangement of the vortex topology. Remarkably, during reconnection there is a net normal fluid helicity production, as shown in Fig.~\ref{fig:total-helicity}. \NOTE{GK: update text depending on the final figure.}
 \begin{figure}[t]
     \centering
-    \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
-\caption{\emph{Top:} Mutual friction injection spectrum, $I_k$. 
-\emph{Bottom:} Spectral normal fluid kinetic energy flux, $\Pi_E$. 
-\emph{Inset:} Post reconnection evolution of the integral length scale, $\mathcal{L}_E$ \NOTE{GK:in text is $\mathcal{L}$, what are the units? maybe normalise it by its initia value?} \NOTE{GK: how is the integral scale evolution before reconnection?} \NOTE{GK: we should normalise $\Pi_E$. In general, we use the total dissipation, but here we might use the total mutual friction injection (hopefully the values are of order one...)}.
-Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
-\label{fig:energy-flux}
+    \includegraphics*[width=0.48\textwidth]{total_helicity_tubes}
+\caption{Temporal evolution of the normal fluid helicity computed over half of the box to consider only one pair of vortices (gray zone). 
+\emph{Inset:} Whole computational box showing the two pairs of vortices. \NOTE{change for just the total helicity}}.
+\label{fig:total-helicity}
 \end{figure}
 
-We first focus the attention on the time evolution of the normal fluid energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional wavenumber), illustrated in Fig.~\ref{fig:kinetic-energy}. It clearly emerges that, during the reconnection, energy is predominantly injected into the normal fluid at intermediate and small length scales. 
+We now focus on the time evolution of the normal fluid energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional wavenumber), illustrated in Fig.~\ref{fig:kinetic-energy}.a. 
+\begin{figure}[b]
+    \centering
+    \includegraphics*[width=0.48\textwidth]{energy-spec.pdf}
+    \caption{a) Normal fluid kinetic energy spectrum $E(k)$ before 
+reconnection (dashed lines), at reconnection (solid lines) 
+and after reconnection (dotted lines) for $T=1.9K$ (red)
+and $T=2.1K$ (blue). 
+b) Energy injection spectrum $I(k)$ arising from the 
+mutual friction forcing at the same times as in the main figure.}
+    \label{fig:kinetic-energy}
+\end{figure}
+%
+%
+It clearly emerges that, during the reconnection, energy is predominantly injected into the normal fluid at intermediate and small length scales. 
 For $k>5$ in correspondence of the reconnection time $t_0$,
 we observe a significant increase of the normal fluid energy spectral density:
 $E(k,\, t\approx t_0)/E(k,\, t\ll t_0) \approx 10^2$. 
@@ -326,7 +335,7 @@ which energy generated at small length scales is transferred to larger scales.
 To shed light on this mechanism
 we analyse the dynamics of the normal fluid flow using the 
 spectral energy budget equation: 
-
+%
 \begin{equation}
     \frac{\partial E(k)}{\partial t} = T(k) - D(k) + I(k)
 \end{equation}
@@ -342,7 +351,7 @@ which immediately starts relaxing ($R_c$ increases). Since
 $|\mathbf{F}_{ns}| \propto  |\dot{\s}-\v_n| \approx |\dot{\s}| \propto 1/R_c$, 
 the scales of energy injection at reconnection are necessarily
 much smaller than the original length scales before the reconnection, 
-as it can be observed in the inset of Fig.~\ref{fig:kinetic-energy}. 
+as it can be observed in Fig.~\ref{fig:kinetic-energy}.b 
 As time evolves, the smallest perturbations on the vortex lines are damped 
 by friction the fastest, resulting in the shift of 
 the peak of the injection spectrum $I(k)$ towards larger length scales. 
@@ -355,45 +364,45 @@ $\displaystyle \Pi(k) = \int_{k}^{\infty}T(k') dk'$
 we observe that $\Pi(k) < 0$ for all $k$ during and after reconnection;
 we also observe that, near the time of reconnection,
 the peak value of $|\Pi(k)|$ is in the range $5 < k < 15$.
+%
+\begin{figure}[t]
+    \centering
+    \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
+\caption{\emph{Top:} Mutual friction injection spectrum, $I_k$. 
+\emph{Bottom:} Spectral normal fluid kinetic energy flux, $\Pi_E$. It is normalised by using the integral scale and the normal fluid energy at reconnection.
+\emph{Inset:} Post reconnection evolution of the integral length scale, $L_0$.
+Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
+\label{fig:energy-flux}
+\end{figure}
+%
 The negative sign of $\Pi(k)$ is evidence of a flux of kinetic 
 energy from small to large scales. In other words, at non-zero temperatures,
 vortex reconnections trigger an inverse transfer of energy, 
 which implies the creation of large scale structures, visible
-in Fig.~\ref{fig:visualisation}} 
+in Fig.~\ref{fig:visualisation}} \NOTE{GK: the figure show small scale structures...}
 This effect is quantified by
-the evolution of the integral length scale $\mathcal{L}$, 
-defined as \NOTE{GK: coud we change $\mathcal{L}\to L_0$?}
+the evolution of the integral length scale $L_0$, 
+defined as
 \begin{equation}
-    \mathcal{L} = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk
+    L_0 = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk \Big/ \int_0^{\infty}\!\!E(k)dk.
 \end{equation}
-where $K=\int_0^{\infty}\!\!E(k)dk$ is the total turbulent kinetic
-energy\NOTE{GK: why $\pi/2$?}. The inset of Fig.~\ref{fig:energy-flux} shows that
-$\mathcal{L}$ steadily increases in the post-reconnection regime,
-implying generation of large scale structures. 
-
-\begin{figure}[b]
-    \centering
-    \includegraphics*[width=0.48\textwidth]{fmfDecompFig.pdf}
-    \caption{The ratio of the projected helical mutual friction modes $f^+(k)$ and $f^-(k)$
-at different times and temperatures as in Fig.~\ref{fig:kinetic-energy} \NOTE{GK: lengthscale for $\kappa (t-t_0)$} ?}.
-    \label{fig:mutual-friction-decomp}
-\end{figure}
+ The inset of Fig.~\ref{fig:energy-flux} shows that
+$L_0$ steadily increases in the post-reconnection regime,
+confirming the generation of large scale structures.
 
 To explain the inverse energy transfer shown in Fig.~\ref{fig:kinetic-energy},
 we look whether the reconnection triggers a chirality imbalance. 
 We decompose the incompressible Fourier modes of the normal fluid velocity 
 into helical modes \cite{waleffe-1992}:
-
 \begin{equation}
 \hat{\mathbf{v}}_n (\k) = \hat{\mathbf{v}}_n^+(\k) +\hat{\mathbf{v}}_n^-(\k)=
  v_n^+(\mathbf{k}) \mathbf{h}^+(\mathbf{k})+v_n^-(\mathbf{k}) \mathbf{h}^-(\mathbf{k}),
 \end{equation}
-
-\noindent 
+%
 where $\mathbf{h}^\pm (\mathbf{k})$ are the two eigenvectors of the curl 
 operator, \textit{i.e.} $i\k~\times~\h^{\pm}(\k)~=~\pm k \h^{\pm}(\k)$. 
 Similarly, we decompose the Fourier of the transverse mutual friction force:
-$\hat{\mathbf{F}}_{ns}^{\perp} = f^+ \mathbf{h}^+ + f^- \mathbf{h}^-$
+$\hat{\mathbf{F}}_{ns}^{\perp}(\k) = f^+(\k) \mathbf{h}^+ + f^-(\k) \mathbf{h}^-$
 (the  Fourier modes of $\mathbf{F}_{ns}$ parallel to the wavemumber 
 $\k$ do not play any role in the time evolution of $\mathbf{v}_n$ 
 due to the incompressible constraint). 
@@ -401,36 +410,37 @@ The spectral energy densities corresponding to the helical modes are
 $E^{\pm}(\k) = (1/2) |v_n^\pm(\k)|^2$, the total spectral density 
 being $E(\k) = E^{+}(\k) + E^{-}(\k)$. Similarly the spectral helicity 
 density is 
-
 \begin{equation}
 \begin{split}
 H(\k) & = (1/2) \hat{\mathbf{v}}_n (\k)\!\!\! ~\cdot~\!\!\! \hat{\bm{\omega}}_n^* (\k) = \\
 & = k E^+(\k) - k E^-(\k)  = H^+(\k) - H^-(\k),
 \end{split}
 \end{equation}
-
-\noindent 
 where $\bm{\omega}_n$ is the normal fluid vorticity, the star indicates 
 complex conjugate and $H^\pm$ is the helicity contribution of each 
 separate helical mode. 
-The rate of change $I^\pm(\k)$ of the energies $E^{\pm}(\k)$ arising from the mutual 
-friction is proportional to the corresponding helical coefficients
-$f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, 
-and the related signed helicity injection is 
-$I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. 
+%The rate of change $I^\pm(\k)$ of the energies $E^{\pm}(\k)$ arising from the mutual friction is proportional to the corresponding helical coefficients $f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, and the related signed helicity injection is $I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. 
 
 A chiral imbalance occurs if the mutual friction force is helical, 
-\textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$. 
-In Fig.~\ref{fig:mutual-friction-decomp}, we show the spectra of $|f^+|^2/|f^-|^2$, 
-before, during and after the reconnection for both temperatures. It is apparent
+\textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$, with $|f^\pm|^2$ the total squared norm the component. 
+In Fig.~\ref{fig:mutual-friction-decomp}, we show the temporal evolution of $|f^+|^2/|f^-|^2$, 
+before, for both temperatures. 
+%
+\begin{figure}[b]
+    \centering
+    \includegraphics*[width=0.48\textwidth]{fmfDecompFig.pdf}
+    \caption{Temporal evolution of projected mutual friction force components $f^\pm$/ Inset: temporal evolution of total helical components.}.
+    \label{fig:mutual-friction-decomp}
+\end{figure}
+%
+It is apparent
 that during and after the reconnection, the mutual friction force is chiral,
-injecting more positive helicity than negative helicity. 
+injecting more negative helicity than positive helicity. 
 As a result, the ratio $\mathcal{H}^+/\mathcal{H}^-$ 
 (reported in the inset of Fig.~\ref{fig:mutual-friction-decomp}), 
 where $\mathcal{H}^\pm (t) = \int\!\!H^\pm(\k,t)d\k$), 
-increases significantly at reconnection and remains larger than unity even at later times, 
-indicating that the flow is chiral. We conclude that the reconnection triggers indeed
-a chiral imbalance.
+decreases significantly at reconnection and remains smaller than unity even at later times, 
+indicating that the flow is chiral. We conclude that the reconnection triggers indeed a chiral imbalance.
 %Furthermore, as observed in
 %Ref.~\cite{plunianInverseCascadeEnergy2020a}, to observe a negative energy flux the forcing needs to cover the entire spectrum of $k$, which  from the inset of Fig.~\ref{fig:kinetic-energy}, it is evident that this indeed the case.
 
@@ -460,7 +470,7 @@ Our findings have profound implications \NOTE{GK: which ones?} for the nature of
 
 \begin{acknowledgments}
     G.K. was supported by the Agence Nationale de la Recherche through the project the project QuantumVIW ANR-23-CE30-0024-02.
-    This work has been also supported by the French government, through the UCAJEDI Investments in the Future project managed by the National Research Agency (ANR) with the reference number ANR-15-IDEX-01. P.Z.S. acknowledges the financial support of the UCA ``visiting doctoral student program'' on complex systems. Computations were carried out at the Mésocentre SIGAMM hosted at the Observatoire de la Côte d’Azur\NOTE{GK: true?}.
+    This work has been also supported by the French government, through the UCAJEDI Investments in the Future project managed by the National Research Agency (ANR) with the reference number ANR-15-IDEX-01. P.Z.S. acknowledges the financial support of the UniCA ``visiting doctoral student program'' on complex systems. Computations were carried out at the Mésocentre SIGAMM hosted at the Observatoire de la Côte d’Azur\NOTE{GK: true?}.
 
   \end{acknowledgments}
 

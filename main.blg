@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
+This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: apsrev4-2.bst
@@ -27,45 +27,45 @@ Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
 Warning--empty year in suppMat
-You've used 51 entries,
+You've used 49 entries,
             6079 wiz_defined-function locations,
-            1942 strings with 24201 characters,
-and the built_in function-call counts, 55440 in all, are:
-= -- 3956
-> -- 1436
-< -- 309
-+ -- 450
-- -- 350
-* -- 8397
-:= -- 5172
-add.period$ -- 49
-call.type$ -- 51
-change.case$ -- 243
-chr.to.int$ -- 59
-cite$ -- 54
-duplicate$ -- 5097
-empty$ -- 3997
-format.name$ -- 808
-if$ -- 11376
+            1932 strings with 23873 characters,
+and the built_in function-call counts, 53138 in all, are:
+= -- 3788
+> -- 1375
+< -- 298
++ -- 432
+- -- 336
+* -- 8044
+:= -- 4959
+add.period$ -- 47
+call.type$ -- 49
+change.case$ -- 233
+chr.to.int$ -- 57
+cite$ -- 52
+duplicate$ -- 4887
+empty$ -- 3830
+format.name$ -- 774
+if$ -- 10899
 int.to.chr$ -- 3
-int.to.str$ -- 58
-missing$ -- 795
-newline$ -- 199
-num.names$ -- 144
-pop$ -- 2052
+int.to.str$ -- 56
+missing$ -- 762
+newline$ -- 193
+num.names$ -- 138
+pop$ -- 1967
 preamble$ -- 1
-purify$ -- 244
+purify$ -- 234
 quote$ -- 0
-skip$ -- 2438
+skip$ -- 2338
 stack$ -- 0
-substring$ -- 1345
-swap$ -- 4833
-text.length$ -- 165
+substring$ -- 1290
+swap$ -- 4632
+text.length$ -- 158
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 714
+type$ -- 685
 warning$ -- 2
-while$ -- 151
+while$ -- 145
 width$ -- 0
-write$ -- 482
+write$ -- 464
 (There were 2 warnings)

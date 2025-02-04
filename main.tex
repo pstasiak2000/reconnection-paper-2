@@ -317,7 +317,7 @@ reconnection (dashed lines), at reconnection (solid lines)
 and after reconnection (dotted lines) for $T=1.9K$ (red)
 and $T=2.1K$ (blue). 
 b) Energy injection spectrum $I(k)$ arising from the 
-mutual friction forcing at the same times as in the main figure.}
+mutual friction forcing at the same times as in the main figure. \NOTE{GK: I'm not sure that we really need the the injection spectrum, it doesn't have a clear peak and it is very similar to $E(k)$. If we remove, we could simplify the text where we talk about the spectral energy budget that we do not really use (we don't show the dissipation, and we won't do it neither). If we manage to have some visualisation of the large scales, it could replace this figure...}}
     \label{fig:kinetic-energy}
 \end{figure}
 %
@@ -380,15 +380,12 @@ energy from small to large scales. In other words, at non-zero temperatures,
 vortex reconnections trigger an inverse transfer of energy, 
 which implies the creation of large scale structures, visible
 in Fig.~\ref{fig:visualisation}} \NOTE{GK: the figure shows small scale structures...}
-This effect is quantified by
-the evolution of the integral length scale $L_0$, 
-defined as
+This effect is quantified by the evolution of the integral length scale $L_0$, defined as
 \begin{equation}
     L_0 = \frac{\pi}{2 K}\int_0^{\infty}\frac{E(k)}{k}dk \Big/ \int_0^{\infty}\!\!E(k)dk.
 \end{equation}
- The inset of Fig.~\ref{fig:energy-flux} shows that
-$L_0$ steadily increases in the post-reconnection regime,
-confirming the generation of large scale structures.
+The inset of Fig.~\ref{fig:energy-flux} shows that
+$L_0$ indeed  increases steadily in the post-reconnection regime. Note that times have been normalised by the largest eddy-turnover-time at the reconnection event, evidencing  it quick evolution.
 
 To explain the inverse energy transfer shown in Fig.~\ref{fig:kinetic-energy},
 we look whether the reconnection triggers a chirality imbalance. 
@@ -418,13 +415,12 @@ H(\k) & = (1/2) \hat{\mathbf{v}}_n (\k)\!\!\! ~\cdot~\!\!\! \hat{\bm{\omega}}_n^
 \end{equation}
 where $\bm{\omega}_n$ is the normal fluid vorticity, the star indicates 
 complex conjugate and $H^\pm$ is the helicity contribution of each 
-separate helical mode. 
+separate helical mode. \NOTE{GK: the standard definition of the energy and helicity spectra contains the sum over the angles, so the previous definition are wrong (except if you redifined them for some reason).}
 %The rate of change $I^\pm(\k)$ of the energies $E^{\pm}(\k)$ arising from the mutual friction is proportional to the corresponding helical coefficients $f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, and the related signed helicity injection is $I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. 
 
 A chiral imbalance occurs if the mutual friction force is helical, 
 \textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$, with $|f^\pm|^2$ the total squared norm the component. 
-In Fig.~\ref{fig:mutual-friction-decomp}, we show the temporal evolution of $|f^+|^2/|f^-|^2$, 
-before, for both temperatures. 
+In Fig.~\ref{fig:mutual-friction-decomp}, we show the temporal evolution of $|f^+|^2/|f^-|^2$, for both temperatures. 
 %
 \begin{figure}[b]
     \centering
@@ -438,7 +434,7 @@ that during and after the reconnection, the mutual friction force is chiral,
 injecting more negative helicity than positive helicity. 
 As a result, the ratio $\mathcal{H}^+/\mathcal{H}^-$ 
 (reported in the inset of Fig.~\ref{fig:mutual-friction-decomp}), 
-where $\mathcal{H}^\pm (t) = \int\!\!H^\pm(\k,t)d\k$), 
+where $\mathcal{H}^\pm (t) = \int\!\!H^\pm(\k,t)d\k$ \NOTE{GK: this one is consistent with the definition}, 
 decreases significantly at reconnection and remains smaller than unity even at later times, 
 indicating that the flow is chiral. We conclude that the reconnection triggers indeed a chiral imbalance.
 %Furthermore, as observed in

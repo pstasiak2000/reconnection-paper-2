@@ -335,37 +335,33 @@ sudden normal fluid helicity production, as shown in Fig.~\ref{fig:total-helicit
 \begin{figure}[t]
     \centering
     \includegraphics*[width=0.48\textwidth]{helicity_total}
-\caption{Temporal evolution of the normal fluid helicity computed over half of the box to consider only one pair of vortices (gray zone). \NOTE{GK: in the text we call it $\mathcal{H}$ and in the figure $\mathcal{H}_\mathcal{N}$} \NOTE{GK: are you sure is correct to divide by $\kappa$? . In the code, the total helicity is computed per unit of volume (as usual in fluid mechanics) ie $[\mathcal{H}]=[\omega v]=L/T^2$}}.
+\caption{Temporal evolution of the normal fluid helicity $\mathcal{H} = \int_{\mathcal{V}}H(\x)dV$ computed over the entire volume. For superfluid helium, it is proper to make the helicity dimensionless in terms of $\kappa^2$. The quantities $E_R$ and $L_R$ are the energy $E$ and integral length scales $L_0$ of the normal fluid at reconnection time $t_R$.}
 \label{fig:total-helicity}
 \end{figure}
 
-\magenta{[
-Notes of CFB about today's meeting:
-Some notation needs fixing: The total helicity ${\cal H}=\int H dV$
- should be defined in the text
-in terms of the helicity density $H({\bf x})$ defined in the first
-column of page 3. In the caption of Fig.2 we can say that for superfluid
-helium it is proper to make the helicity dimensioness in terms of $\kappa^2$.
-The total energy 
-$E=(1/V) \int v^2/2 dV=\int_0^{\infty} E(k) dk$ should be defined together
-with the energy spectrum $E(k)$, as this allows to explain what is $E_R$
-(the energy at reconnection time) as well clarifying the energy spectrum.
-The energy spectrum is sometimes given by $E(k)$ and sometimes by $E_k$: we
-should be more consistent. The reconnection time $t_R$ at some places is still
-called $t_0$, again we need consistency. The green text can
-be removed for clarity. We do not need to define the transfer function
-any longer. Finally we need a stronger conclusion]}
-
-We now focus on the time evolution of the normal fluid energy spectrum $E(k)$ (where $k$ is the magnitude of the three-dimensional wavenumber), displayed in Fig.~\ref{fig:kinetic-energy}.
+We now focus on the time evolution of the normal fluid energy spectrum $E(k)$, given by 
+\begin{equation}
+    E = \frac{1}{2\mathcal{V}}\int_{\mathcal{V}}|\v_n|^2 dV = \int_0^{\infty}E(k)dk
+\end{equation}
+where $E$ is the total normal fluid energy and $k$ is the magnitude of the three-dimensional wavenumber. The energy at reconnection $E_R$ is given by $E(t_R)$, where $t_R$ is the time at reconnection. The energy spectrum $E(k)$ is displayed in Fig.~\ref{fig:kinetic-energy}.
 \begin{figure}[h!]
     \centering
-    \includegraphics*[width=0.48\textwidth]{energy-spec.pdf}
-    \caption{a) Normal fluid kinetic energy spectrum $E(k)$ before 
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics*[width=\textwidth]{energy-spec.pdf}
+        \caption{}\label{fig:kinetic-energy}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics*[width=\textwidth]{flux-spec.pdf}
+        \caption{}\label{fig:energy-flux}
+    \end{subfigure}
+    \caption{\emph{(a):} Normal fluid kinetic energy spectrum $E(k)$ before 
 reconnection (dashed lines), at reconnection (solid lines) 
 and after reconnection (dotted lines) for $T=1.9K$ (red)
-and $T=2.1K$ (blue). 
- \NOTE{GK: now, as we are not showing the velocity, we could put figure 4 together with figure 3.}}
-    \label{fig:kinetic-energy}
+and $T=2.1K$ (blue).\emph{(b):} Spectral normal fluid kinetic energy flux, $\Pi_E$. It is normalised by using the integral scale and the normal fluid energy at reconnection.
+\emph{Inset:} Post reconnection evolution of the integral length scale, $L_0$.
+Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}.}
 \end{figure}
 %
 %
@@ -400,16 +396,6 @@ To shed light on this mechanism, as customary for turbulent flows, we analyse th
 We observe that $\Pi(k) < 0$ for all $k$ during and after reconnection;
 we also observe that, near the time of reconnection,
 the peak value of $|\Pi(k)|$ is in the range $5 < k < 15$.
-%
-\begin{figure}[t]
-    \centering
-    \includegraphics*[width=0.48\textwidth]{flux-spec.pdf}
-\caption{\emph{Top:} Mutual friction injection spectrum, $I_k$. 
-\emph{Bottom:} Spectral normal fluid kinetic energy flux, $\Pi_E$. It is normalised by using the integral scale and the normal fluid energy at reconnection.
-\emph{Inset:} Post reconnection evolution of the integral length scale, $L_0$.
-Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}}.
-\label{fig:energy-flux}
-\end{figure}
 %
 The negative sign of $\Pi(k)$ is evidence of a flux of kinetic  energy from small to large scales, exciting larger and larger scales.% In other words, at non-zero temperatures,
 % vortex reconnections trigger an inverse transfer of energy, 

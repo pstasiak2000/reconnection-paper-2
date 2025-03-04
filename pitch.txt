@@ -1,0 +1,7 @@
+Our study reveals that in superfluids, vortex reconnection trigger an inverse energy transfer unlike
+classical vortex reconnections. The underlying mechanism is 'classical', namely the generation of
+a helical imbalance in the normal fluid embedding superfluid vortices. 
+Our paper hence contributes to the lively debate comparing classical and quantum turbulence, introducing
+an element which until now has been significantly overlooked: the role of helicity, its generation, dissipation
+and transfer between the two fluid components constituting superfluids. We believe that our findings will stimulate
+further studies in this direction. 

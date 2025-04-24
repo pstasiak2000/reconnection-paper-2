@@ -1,0 +1,10 @@
+1)
+2)
+3)
+4)
+5) The value t_0 should in fact be t_R, the typo has been corrected.
+6) The authors agree with the comment of the referee that the current notation is not ideal. Instead, the figures have been changed to use the timescale in the horizontal axis of all time plots. Additionally to note, we have replaced the vertical axis label of Fig 3b with (E_R/\tau_R), simply a change of symbols to make clear the non-dimensionalisation of units.
+7) The figure has been updated with a power law of k^-3 
+8) The time t^* was introduced as the time at which we observe a sufficient decay of the helical force ratio, where the difference is around 5% between the positive and negative modes and remains relatively stable afterwards. In order to make this clearer, we have added a sentance in the text to explicity state this. 
+9) The value of 0.1s comes from dimensionalising the values of \tau=0.01 for T=1.9K and \tau=0.005 for T=2.1K, using the values of \tilde{\tau} listed in the supplementary materials. 
+10) Incorrect reference corrected as noted by the reviewer.

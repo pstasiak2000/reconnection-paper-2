@@ -29,24 +29,18 @@ We thank the reviewers for taking the time to read over and give constructive fe
     positive helicity or not. If both of them yield the negative helicity,
     the initial setup already causes a symmetry breaking.}
 
-    The initial configuration is set up such that the superfluid velocity circlation in each half box has the opposite sign to the other half box, this is required to satisfy the periodic boundary conditions in the superfluid component. In the timescale of the simulation, we only observe one pair of the vortices which reconnect. During the reconnection, due to the large injection the helicity from the other pair is anyway negligible. The extended version of the simulation shows that the second reconnection injects positive helicity in the normal fluid, which then decays back to zero. Additionally, we computed the normal fluid helicity in each respective half box which also confirms this. We have added a sentence in the text to further clarify that the effect of the second vortex is negligent. \\ 
+    The initial configuration is set up such that the superfluid velocity circlation in each half box has the opposite sign to the other half box, this is required to satisfy the periodic boundary conditions in the superfluid component. In the timescale of the simulation, we only observe one pair of the vortices which reconnect, as the reconnection events occur asynchronously. During the reconnection, due to the large injection the helicity from the other pair is anyway negligible. The extended version of the simulation shows that the second reconnection injects positive helicity in the normal fluid, which then decays back to zero. Additionally, we computed the normal fluid helicity in each respective half box which also confirms this. We have added a sentence in the text to further clarify that the effect of the second vortex is negligent. 
     
-    \red{\bfseries PZS: Add the new figure helicity\_normal\_fluid.pdf instead of Fig.2?}\\
+    To illustrate this point, we have modified the text to explicity state thet reconnections occur asynchronously, and we have added some extra details to Fig.2 in the manuscript which highlight this visually. \\
 
     \refcomment{3) Fig.3: In Fig.3(b), at $t = t_R$ the energy transfer at $T = 2.1K$ is
     higher than that at $T = 1.9K$. However, the energy at $T = 2.1K$ is lower
     than that at $T = 1.9K$. This is inconsistent. Please describe what
     happens. Is it better to normalize the $E(k)$ by $E_R$?}
 
-    We appreciate the referee’s careful reading of the manuscript and their observation regarding a perceived inconsistency between the plots of the energy spectrum and the energy flux. Firstly, we would like to note the following points that should be considered:
-    \begin{itemize}
-        \item The energy spectrum is on a logarithmic scale - the energy flux is on a linear scale.
-        \item The two plots are scaled differently: The energy spectrum is displayed in units of the code, while the energy flux is scaled by the energy flux at reconnection.
-        \item The energy spectrum and energy flux don't have the same units.
-    \end{itemize}
-    We would like to clarify that what may appear as an inconsistency arises from the omission of the injection spectrum in the figures presented in the paper, which shows that the injection is larger postreconnection for $T=1.9$K.
-    
-    In the Navier-Stokes model that we employ, the rate of the energy spectrum is given by
+    We appreciate the referee’s careful reading of the manuscript and their observation regarding a perceived inconsistency between the plots of the energy spectrum and the energy flux. Firstly, we would like to note that the two plots are scaled differently: The energy spectrum is displayed in units of the code, while the energy flux is scaled by the energy flux at reconnection.\\
+
+    We would like to clarify that what may appear as an inconsistency arises from the omission of the injection spectrum in the figures presented in the paper, which shows that the injection is larger postreconnection for $T=1.9$K. In the Navier-Stokes model that we employ, the rate of the energy spectrum is given by
     \begin{equation}
         \frac{\partial E(k)}{\partial t} = -\frac{\partial \Pi(k,t)}{\partial k} + D(k,t) + I(k,t)
     \end{equation}
@@ -108,7 +102,7 @@ Regarding this point, the referee understood the most important claim of our pap
 \refcomment{While the paper’s idea is interesting and worth pursuing, I believe the authors fail to provide even minimal evidence to support their case. Below, I address my main points.
 (i) First, the use of the word “turbulence” in the very first line (and used 16 times in other parts) of the manuscript is misleading: the flow studied by the authors is just a collision of vortex filaments. There is no turbulent flow at all here. It is all about a specific problem on superfluid flow instability.}
 
-As the Referee is certainly aware, vortex reconnections play an important role in turbulence.  We have never claimed that our system is turbulent, but we do think that our findings have a strong impact on quantum turbulence.  As the Referee might have noticed while counting how many times we used the word “turbulence”, we only used it in the introduction to motivate our work and to explain its relevance to a broad audience, and at the very end of our manuscript end to comment on its implications in the conclusions. Explaining cascades and then turbulence is necessary to understand the role of helicity on transfer towards large scales. We still believe that the use of the word turbulence is appropriate in our manuscript. We have nevertheless added a sentence in the introduction to remind the reader of the importance of vortex reconnections in turbulent flows and a comment in the conclusions about when our finding might be important for quantum turbulence. \\
+As the Referee is certainly aware, vortex reconnections play an important role in turbulence.  We have never claimed that our system is turbulent, but we do think that our findings have a strong impact on quantum turbulence.  In the text, we have only referred to `turbuelnce' in the introduction to motivate our work and to explain its relevance to a broad audience, and at the very end to comment on its implications in the conclusions. Explaining cascades and then turbulence is necessary to understand the role of helicity on transfer towards large scales. We still believe that the use of the word turbulence is appropriate in our manuscript. We have nevertheless added a sentence in the introduction to remind the reader of the importance of vortex reconnections in turbulent flows and a comment in the conclusions about when our finding might be important for quantum turbulence. \\
 
 \refcomment{(ii) The work of Polanco and Krstulovic [PRL (2020)] gives strong indication that counterflow superfluid turbulence behaves (for large enough counterflow velocities) as a quasi two-dimensional syste and, therefore, an inverse energy cascade is expected to occur. Polanco and Krstulovic have also observed, by the way, the energy spectrum decay of the direct enstrophy cascade, in further qualitative agreement with the Batchelor-Kraichnan picture of 2D turbulence.}
 
@@ -132,7 +126,7 @@ The Referee has raised a good point.  In a recent paper [arXiv:2501.08309 ], th
 
 \refcomment{For the above reasons, I do not recommend the paper for publication in the PRL.}
 
-We hope that we have provided enough arguments to the Referee and they see now the impact of our Letter.
+\noindent We hope that we have provided enough arguments to the Referee and they see now the impact of our Letter.
 
 
 

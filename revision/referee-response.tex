@@ -1,7 +1,15 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{lipsum}
-\usepackage{graphicx, float}
+\usepackage{amsmath}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{cleveref}
+\usepackage{subcaption}
 \usepackage{xcolor}
 \def\red#1{\textcolor{red}{#1}}
 \def\blue#1{\textcolor{blue}{#1}}
@@ -20,7 +28,7 @@ We thank the reviewers for taking the time to read over and give constructive fe
     mutual friction force and normal fluid velocity is conserved? Normal
     fluid is handled as a viscous flow. Please describe to readers.}
 
-    The total helicity during the reconnection event is not conserved. The presence of the mutual friction force introduces a dissipation into the normal fluid. Overall, by computing the helicity in the superfluid component, we confirmed this. We decided to omit this plot from the manuscript so as to not introduce further concepts of superfluid helicity to a paper whose narrative is normal fluid centric. We have addressed the referees concern by inserting an additional statement to clarify that the helicity during the reconnection event is not in fact conserved. \\
+    The presence of the mutual friction force introduces an \red{additional source of} dissipation into the normal fluid. Overall, by \red{also} computing the helicity in the superfluid component, we observe that the total helicity during the reconnection event is not conserved. We decided to omit this plot from the manuscript so as to not introduce further concepts of superfluid helicity to a paper whose narrative is normal fluid centric. We have addressed the referee's concern by inserting an additional statement to clarify that the total helicity during the reconnection event is not conserved. \\
 
     \refcomment{2) p.3, right: Two pairs of initially orthogonal vortices are
     considered in the present configuration. This paper reports that one
@@ -29,16 +37,34 @@ We thank the reviewers for taking the time to read over and give constructive fe
     positive helicity or not. If both of them yield the negative helicity,
     the initial setup already causes a symmetry breaking.}
 
-    The initial configuration is set up such that the superfluid velocity circlation in each half box has the opposite sign to the other half box, this is required to satisfy the periodic boundary conditions in the superfluid component. In the timescale of the simulation, we only observe one pair of the vortices which reconnect, as the reconnection events occur asynchronously. During the reconnection, due to the large injection the helicity from the other pair is anyway negligible. The extended version of the simulation shows that the second reconnection injects positive helicity in the normal fluid, which then decays back to zero. Additionally, we computed the normal fluid helicity in each respective half box which also confirms this. We have added a sentence in the text to further clarify that the effect of the second vortex is negligent. 
-    
-    To illustrate this point, we have modified the text to explicity state thet reconnections occur asynchronously, and we have added some extra details to Fig.2 in the manuscript which highlight this visually. \\
+    The initial configuration is set up such that the superfluid velocity circlation in each half box has the opposite sign to the other half box, this is required to satisfy the periodic boundary conditions in the superfluid component. In the timescale of the simulation, we only observe one pair of vortices which reconnects, as the reconnection events occur asynchronously. During the reconnection, due to the large injection the helicity from the other pair is anyway negligible. The extended version of the simulation shows that the second reconnection injects positive helicity in the normal fluid, which then decays back to zero. Additionally, we computed the normal fluid helicity in each respective half box which also confirms this. To illustrate this point, we have modified the text to explicity state thet reconnections occur asynchronously \red{and that we focus on the first one}, and we have added some extra details to Fig.2 in the manuscript which highlight this visually. \\
 
     \refcomment{3) Fig.3: In Fig.3(b), at $t = t_R$ the energy transfer at $T = 2.1K$ is
     higher than that at $T = 1.9K$. However, the energy at $T = 2.1K$ is lower
     than that at $T = 1.9K$. This is inconsistent. Please describe what
     happens. Is it better to normalize the $E(k)$ by $E_R$?}
 
-    We appreciate the referee’s careful reading of the manuscript and their observation regarding a perceived inconsistency between the plots of the energy spectrum and the energy flux. Firstly, we would like to note that the two plots are scaled differently: The energy spectrum is displayed in units of the code, while the energy flux is scaled by the energy flux at reconnection. The discreplency that can be seen is a result of the scalings used. In the Fig.3b the values are scaled at the reconnection values, which are different at both the temperatures. In dimensional units, we have verified that in fact that both the flux and the energy spectrum are larger for $T=1.9K$ than $T=2.1K$. \\
+    \red{We appreciate the referee’s careful reading of the manuscript and their observation regarding a perceived inconsistency between the plots of the energy and energy flux spectra. The perceived inconsistency arises from the scalings employed. While the energy spectrum is in arbitrary units (in particular, in the non dimensional units of the code), the energy flux is normalised with quantities at reconnection which depend on the temperature. If, in fact, we plot the spectra in dimensional units (Figures 1 attached) no inconsistency emerges. In the revised version of the code, following the referee's suggestion, we have scaled $E(k)$ by $E_R L_R$.}
+    
+    \begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics*[width=\textwidth]{K_dimensional_clean.png}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics*[width=\textwidth]{K_flux_dimensional_clean.png}
+        \caption{}
+    \end{subfigure}
+    \caption{\emph{(a):} Normal fluid kinetic energy spectrum $E(k)$ before 
+reconnection (dashed lines), at reconnection (solid lines) 
+and after reconnection (dotted lines) for $T=1.9K$ (red)
+and $T=2.1K$ (blue).\emph{(b):} Spectral normal fluid kinetic energy flux, $\Pi (k)$. 
+}
+\end{figure}
+%Firstly, we would like to note that the two plots are scaled differently: The energy spectrum is displayed in units of the code, while the energy flux is scaled by the energy flux at reconnection. The discreplency that can be seen is a result of the scalings used. In the Fig.3b the values are scaled at the reconnection values, which are different at both the temperatures. In dimensional units, we have verified that in fact that both the flux and the energy spectrum are larger for $T=1.9K$ than $T=2.1K$. \\
 
     \refcomment{4) p.4, right, "This inverse energy transfer arises from the helical
     character of the friction generated by the Kelvin waves released by
@@ -46,7 +72,9 @@ We thank the reviewers for taking the time to read over and give constructive fe
     Kelvin wave? This reviewer thought that it is due to the mutual
     friction force being helical as described on the left of p.4.}
 
-    The referee is correct in thinking that the inverse energy transfer is due to the Kelvin waves. After the reconnection event, Kelvin waves are released by the reconnection cusp, which propagate outwards along both sides of the vortex. This in turn generates a helical profile in the normal fluid, however these Kelvin waves are damped at different rates. This in turn is what creates the imbalance of helicity.  
+    The mutual friction force is helical as a result of the presence of Kelvin wave packets released along the vortices after the relaxation of the cusp generated at reconnection. The two elements, helical character of the mutual friction force and the presence of Kelvin wave are hence inter-twinned. We have 
+underlined this aspect in the revised version of the manuscript, by slightly modifying the sentence pointed by the referee.  
+%    The referee is correct in thinking that the inverse energy transfer is due to the Kelvin waves. After the reconnection event, Kelvin waves are released by the reconnection cusp, which propagate outwards along both sides of the vortex. This in turn generates a helical profile in the normal fluid, however these Kelvin waves are damped at different rates. This in turn is what creates the imbalance of helicity.  
   
     \refcomment{5) Figure caption in Fig.1, $(t - t_0)/\tau_R$: $t_0$ is $t_R$ ?}
 
@@ -54,7 +82,7 @@ We thank the reviewers for taking the time to read over and give constructive fe
     
     \refcomment{6) Horizontal label in Fig.2: $(t - t_R)/\tau_R$ would be better than $(t- \tau_R)E_R^{1/2}/L_R$ ?}
 
-    The authors agree with the comment of the referee that the current notation is not ideal. Instead, the figures have been changed to use the timescale in the horizontal axis of all time plots. Additionally to note, we have replaced the vertical axis label of Fig. 3b with $E_R/\tau_R$, simply a change of symbols to make clear the non-dimensionalisation of units.\\
+    The authors agree with the comment of the referee that the current notation is not ideal. Instead, the figures have been changed to use the timescale in the horizontal axis of all time plots. Additionally to note, we have replaced the vertical axis label of Fig. 3b with $E_R \red{L_R}/\tau_R$, simply a change of symbols to make clear the non-dimensionalisation of units.\\
     
     \refcomment{7) Figure 3(a): Is there a power law for the slope of $E(k)$?}
 
@@ -76,11 +104,15 @@ We thank the reviewers for taking the time to read over and give constructive fe
 
     Incorrect reference corrected as noted by the reviewer.\\
 
+
+
+
+\newpage
 \subsection*{Referee B}
 
 \refcomment{The authors’ main motivation, as far as I understand, is to propose a mechanism for the inverse energy cascade which is numerically observed in counterflow superfluid turbulence [Polanco and Krstulovic, PRL (2020)].}
 
-We want to clarify to the Referee that the purpose of our work is not at all to explain Polanco \& Krstulovic PRL 2020. Indeed, this article is only cited at the end of our manuscript, as a possible physical setting where the new physical phenomena described in our manuscript could be relevant, and it could be perhaps at the origin of the inverse cascade reported in that paper (that one of us co-authors).  To avoid possible confusion, we have reformulated the only paragraph in the conclusion where we cite Polanco\&Krstulovic.\\
+We want to clarify to the Referee that the purpose of our work is not at all to explain Polanco \& Krstulovic PRL 2020. Indeed, this article is only cited at the end of our manuscript, as a possible physical setting where the new physical phenomena described in our manuscript could be relevant, and it could perhaps contribute to the origin of the inverse cascade reported in that paper (that one of us co-authors).  To avoid possible confusion, we have reformulated the only paragraph in the conclusion where we cite Polanco\&Krstulovic.\\
 
 \refcomment{As recalled by the authors, inverse energy cascades show up when helicity symmetry is explicitely broken by external forcing as in [Plunian et al., JFM (2020)]. Their claim, then, is that vortex reconnection events in superfluid turbulence will similarly break helicity symmetry and trigger, in this way, an inverse energy cascade in the flow.}
 
@@ -89,27 +121,39 @@ Regarding this point, the referee understood the most important claim of our pap
 \refcomment{While the paper’s idea is interesting and worth pursuing, I believe the authors fail to provide even minimal evidence to support their case. Below, I address my main points.
 (i) First, the use of the word “turbulence” in the very first line (and used 16 times in other parts) of the manuscript is misleading: the flow studied by the authors is just a collision of vortex filaments. There is no turbulent flow at all here. It is all about a specific problem on superfluid flow instability.}
 
-As the Referee is certainly aware, vortex reconnections play an important role in turbulence.  We have never claimed that our system is turbulent, but we do think that our findings have a strong impact on quantum turbulence.  In the text, we have only referred to `turbulence' in the introduction to motivate our work and to explain its relevance to a broad audience, and at the very end to comment on its implications in the conclusions. Explaining cascades and then turbulence is necessary to understand the role of helicity on transfer towards large scales. We still believe that the use of the word turbulence is appropriate in our manuscript. We have nevertheless added a sentence in the introduction to remind the reader of the importance of vortex reconnections in turbulent flows and a comment in the conclusions about when our finding might be important for quantum turbulence. \\
+As the Referee is certainly aware, vortex reconnections play an important role in turbulence.  We have never claimed that our system is turbulent, but we do think that our findings have a strong impact on quantum turbulence.  In the text, we have only referred to `turbulence' in the introduction to motivate our work and to explain its relevance to a broad audience, and at the very end to comment on its implications in the conclusions. Explaining cascades, turbulence and invariants is necessary to understand the role of helicity on transfer towards large scales. We still believe that the use of the word turbulence is appropriate in our manuscript. We have nevertheless added a sentence in the introduction to remind the reader of the importance of vortex reconnections in quantum turbulent flows and a comment in the conclusions about when our finding might be important for quantum turbulence. \\
 
 \refcomment{(ii) The work of Polanco and Krstulovic [PRL (2020)] gives strong indication that counterflow superfluid turbulence behaves (for large enough counterflow velocities) as a quasi two-dimensional syste and, therefore, an inverse energy cascade is expected to occur. Polanco and Krstulovic have also observed, by the way, the energy spectrum decay of the direct enstrophy cascade, in further qualitative agreement with the Batchelor-Kraichnan picture of 2D turbulence.}
 
-We do agree with the Referee’s understanding of Polanco\& Krstulovic main result. However, we do not understand why the Referee mentions it as they have not formulated any question or critcism.\\
+We do agree with the Referee’s understanding of Polanco\& Krstulovic main result. 
+%However, we do not understand why the Referee mentions it as they have not formulated any question or critcism.\\
+However, we would like again to point out that the purpose of our work is not at all to explain Polanco \& Krstulovic PRL 2020. Indeed, this article is only cited at the end of our manuscript, as a possible physical setting where the new physical phenomena described in our manuscript could be relevant. \red{The relevance of the large counterflow velocities in our mechanism for inverse energy transfer is in addition addressed in the next point.}
+ 
 
-\red{\textbf{GK: Something better to say?}}
 
 \refcomment{(iii) The helicity production for an individual vortex reconnection event can be, of course, positive or negative. However, it is unlikley that this will be the case for the global helicity production associated to the complex vortex tangle of counterflow turbulence. I note that the previous results of [Plunian et al., JFM (2020)] refer to flow regimes where helicity symmetry is broken across all scales by the external forcing.}
 
-Indeed, the helicity injection produced by random vortex reconnections is not sign-defined, but by a single one, it is.  In isotropic turbulence, the helicity injection produced by vortex reconnection is certainly positive and negative. In the case when the system is highly anisotropic and the vortex density is sufficiently large, it is less clear if such a symmetry breaking could favour the production of helicity of one given sign. For this reason,  at the end of the conclusion, we mentioned counterflow turbulence as such an example and raised the question of whether the findings of Polanco\&Krstulovic could be ultimately related to the new mechanism reported in our Letter.  Providing a definitive answer to this open question is undoubtedly challenging and beyond the scope of our work. In the revised version, we have softened and reformulated the sentence referring to Polanco\&Krstulovic.\\
+Indeed, the helicity injection produced by random vortex reconnections is not sign-defined, but the helicity injected by a single one, it is.  In isotropic turbulence, the helicity injection produced by vortex reconnections is certainly positive and negative \red{and the overall helicity injected
+might cancel out. However,} in the case where the system is highly anisotropic and the vortex density is sufficiently large \red{(as it is the case when counterflow velocities are large, where vortices tend to lie in a plane perpendicular to the heat flow)}, such symmetry breaking induced by the counterflow velocity could favour an asymmetry in the reconnection events triggering the overall production of helicity of one given sign. For this reason, at the end of the conclusion, we mentioned counterflow turbulence as such an example and raised the question of whether the findings of Polanco\&Krstulovic could be ultimately related to the new mechanism reported in our Letter.  Providing a definitive answer to this open question is undoubtedly challenging and beyond the scope of our work. In the revised version, we have softened and reformulated the sentence referring to Polanco\&Krstulovic.\\
 
 \refcomment{(iv) The vortex reconnection mechanism for the inverse energy cascade would imply that energy would flow from very small scales (around the atomic sizes of the vortex cores) towards the integral length scales. That is not what is observed, as discussed by Polanco and Krstulovic [PRL (2020)].}
 
-We remind the Referee that Polanco\&Krstulovic used the HVBK model. This model does not describe quantised vortices, and the energy injection was made through an external term, which acting scale can be chosen arbitrarily.  The inverse cascade is triggered by the nonlinear term when the counterflow is strong enough, which leads to a strong anisotropy. In our coupled model, the normal fluid energy injection is produced by vortex reconnections, and it is indeed transferred towards large scales.  We remind the Referee that one needs to be careful while comparing HVBK and our couple model as they describe the physics at very different scales.  Again, by writing the sentence about Polanco\&Krstulovic, we simply raise a question that needs further investigation.\\
+We remind the Referee that Polanco\&Krstulovic used the HVBK model. This model does not describe quantised vortices, and the energy injection was made through an external term, whose acting scale can be chosen arbitrarily.  The inverse cascade is triggered by the nonlinear term when the counterflow is strong enough, which leads to a strong anisotropy. In our coupled model, the normal fluid energy injection is produced by vortex reconnections, and it is indeed transferred towards large scales \red{by non-linear terms, at $k < 40$ (Fig. 3b), \textit{i.e.} at scales much larger than the vortex core (we recall that our box is
+$1mm^3$)}. We remind the Referee that one needs to be careful while comparing HVBK and our coupled model as they describe the physics at very different scales.  Again, by writing the sentence about Polanco\&Krstulovic, we simply raise a question that needs further investigation.\\
 
 \refcomment{(v) Finally, the “inverse energy cascade” detected by the authors may be unrelated to helicity production. One could just as easily argue that the perturbation/production of the standard component of the fluid through vortex reconnection is initially localized around the point where the filaments come into close contact. Subsequently, this normal component perturbation is strained by the specific background velocity configuration of the surrounding normal fluid. Helicity would not play any relevant dynamical role here.}
 
-The Referee has raised a good point.  In a recent paper [arXiv:2501.08309 ], three of us studied the wakes generated by moving superfluid vortices (with respect to the normal fluid). In this case, energy is transferred to small scales, discarding the scenario proposed by the Referee.\\
+The Referee raises a good point.  In a recent paper [arXiv:2501.08309], three of us studied the wakes generated by moving superfluid vortices (with respect to the normal fluid). In this case, however, energy results to be transferred to \textit{small} scales, discarding the scenario proposed by the Referee. \red{We attach here (Fig. 2) the plot of the energy flux spectrum corresponding to the development of the wakes: all values are positive, showing a direct energy cascade.} \\
 
-\red{\textbf{GK: Shall we add a comment like this in the letter? GK:a figure in the suplemental? }}\\
+
+
+%
+\begin{figure}[h!]
+    \centering
+    \includegraphics*[width=0.48\textwidth]{flux_wakes.png}
+    \caption{Spectral normal fluid kinetic energy flux, $\Pi (k)$ for the wakes generated in the normal fluid, data from [arXiv:2501.08309].}.
+    
+\end{figure}
 
 \refcomment{For the above reasons, I do not recommend the paper for publication in the PRL.}
 

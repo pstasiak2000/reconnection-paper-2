@@ -20,7 +20,7 @@
 %
 \documentclass[%
  reprint,
-% superscriptaddress,
+%  superscriptaddress,
 %groupedaddress,
 %unsortedaddress,
 %runinaddress,
@@ -46,7 +46,7 @@
 \usepackage{bm}% bold math
 \usepackage{blindtext}
 \usepackage{float}
-\usepackage{caption}
+\usepackage{caption,cancel}
 \usepackage{cleveref}
 \usepackage{subcaption}
 \usepackage{xcolor}
@@ -101,7 +101,12 @@
 \title{Inverse energy transfer in three-dimensional quantum vortex flows}
 
 \author{P. Z. Stasiak}
+\affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
+
 \author{A. Baggaley}
+\affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
+\affiliation{Department of Mathematics and Statistics, Lancaster University, Lancaster, LA1 4YF, UK}
+
 \author{C.F. Barenghi}
 \affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
 
@@ -384,10 +389,13 @@ We now focus on the time evolution of the normal fluid energy spectrum $E(k)$, d
 \begin{equation}
     E = \frac{1}{(2\pi)^3}\int_{\mathcal{V}}\frac{1}{2}|\v_n|^2 dV = \int_0^{\infty}E(k)dk
 \end{equation}
-where $E$ is the total normal fluid energy and $k$ is the magnitude of the three-dimensional wavenumber. The energy at reconnection $E_R$ is given by $E(t_R)$, where $t_R$ is the time at reconnection. The energy spectrum $E(k)$ is displayed in Fig.~\ref{fig:kinetic-energy}.
+where $E$ is the total normal fluid energy and $k$ is the magnitude of the three-dimensional wavenumber. The energy at reconnection $E_R$ is given by $E(t_R)$, where $t_R$ is the time at reconnection. The energy spectrum $E(k)$ is displayed in Fig.~3a.
 \begin{figure}
     \centering
     \includegraphics[width=0.49\textwidth]{energy-flux-spec.pdf}
+
+
+
     % \begin{subfigure}{0.49\textwidth}
     %     \centering
     %     \includegraphics*[width=\textwidth]{energy-spec.pdf}
@@ -398,12 +406,18 @@ where $E$ is the total normal fluid energy and $k$ is the magnitude of the three
     %     \includegraphics*[width=\textwidth]{flux-spec.pdf}
     %     \caption{}\label{fig:energy-flux}
     % \end{subfigure}
+% \begin{subcaptiongroup*}
+% 	\phantomsubcaption\label{fig:minimum-distance}
+% 	\phantomsubcaption\label{fig:prefactors}
+% \end{subcaptiongroup*}
+
     \caption{\emph{(a):} Normal fluid kinetic energy spectrum $E(k)$ before 
 reconnection (dashed lines), at reconnection (solid lines) 
 and after reconnection (dotted lines) for $T=1.9K$ (red)
 and $T=2.1K$ (blue).\emph{(b):} Spectral normal fluid kinetic energy flux, $\Pi (k)$. It is normalised using the integral scale and the normal fluid energy at reconnection.
 \emph{Inset:} Post reconnection evolution of the integral length scale, $L$.
-Times and temperatures are labelled as in Fig.~\ref{fig:kinetic-energy}.}
+Times and temperatures are labelled as in Fig.~3a.}
+\label{fig:spectra}
 \end{figure}
 %
 
@@ -447,10 +461,10 @@ This behaviour is quantified by the evolution of the integral length scale $L$, 
 \begin{equation}
     L = \frac{\pi}{2 E}\int_0^{\infty}\frac{E(k)}{k}dk, %\Big/ \int_0^{\infty}\!\!E(k)dk.
 \end{equation}
-The inset of Fig.~\ref{fig:energy-flux} shows that
+The inset of Fig.~3b shows that
 $L$ indeed  increases steadily in the post-reconnection regime. Note that times have been normalised by the largest eddy-turnover-time at the reconnection event, evidencing  it fast evolution.
 
-To explain the inverse energy transfer shown in Fig.~\ref{fig:kinetic-energy},
+To explain the inverse energy transfer shown in Fig.~3b,
 we look whether the reconnection triggers a chirality imbalance. 
 We decompose the incompressible Fourier modes of the normal fluid velocity 
 into helical modes \cite{waleffe-1992}:

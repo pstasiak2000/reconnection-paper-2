@@ -185,7 +185,7 @@ Three-dimensional rendering of the time evolution of
 an initially orthogonal vortex configuration 
 undergoing a vortex reconnection at $T = 1.9$K at dimensionless
 times (from left to right)
-$(t-t_R)/\tau_R=-7.47\times10^{-2}$, $-3.09\times10^{-3}$, $8.79\times10^{-4}$ and $5.39\times10^{-3}$, where $\tau_R = L_R/E^{1/2}_R$. The quantities $E_R$ and $L_R$ are the energy $E$ and integral length scales $L$ of the normal fluid at reconnection time $t_R$. The green
+$(t-t_R)/\tau_R=-7.47\times10^{-2}$, $-3.09\times10^{-3}$, $8.79\times10^{-4}$ and $5.39\times10^{-3}$, where $\tau_R = L_R/E^{1/2}_R$. The green
 tubes represent the superfluid vortex lines (the tubes’ radii have been 
 greatly exaggerated for visual purpose). In the top sequence,
 the blue volume rendering represents the scaled normal fluid enstrophy 
@@ -377,20 +377,24 @@ sudden normal fluid helicity production, as shown in Fig.~\ref{fig:total-helicit
 \begin{figure}[t]
     \centering
 
-      \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics*[width=\textwidth]{helicity_total.pdf}
-        \caption{}\label{fig:}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics*[width=\textwidth]{integral-scale-scaled.pdf}
-        \caption{}\label{fig:}
+
+      \includegraphics[width=0.49\textwidth]{helicity_integralScale.pdf}
+    %   \begin{subfigure}{0.49\textwidth}
+    %     \centering
+    %     \includegraphics*[width=\textwidth]{helicity_total.pdf}
+    %     \caption{}\label{fig:}
+    % \end{subfigure}
+    % \begin{subfigure}{0.49\textwidth}
+    %     \centering
+    %     \includegraphics*[width=\textwidth]{integral-scale-scaled.pdf}
+    %     \caption{}\label{fig:}
         
-    \end{subfigure}
-\caption{\blue{Temporal evolution of the normal fluid helicity $\mathcal{H} = \int_{\mathcal{V}}H(\x)dV$ computed over the entire volume $\mathcal{V}$. For superfluid helium, it is proper to make the helicity dimensionless in terms of $\kappa^2$.}
-%\red{The 3D rendering shows the asynchronous nature of the reconnections in the initial configuration, with the two reconnections occurring at different times; same colour scheme as in Fig.~\ref{fig:visualisation}.}
+    % \end{subfigure}
+\caption{\red{ \emph(a) Temporal evolution of the normal fluid helicity $\mathcal{H} = \int_{\mathcal{V}}H(\x)dV$ computed over the entire volume $\mathcal{V}$. \emph(b) Post reconnection evolution of the integral length scale, $L_0$ scaled by the reconnection time integral scale $L_R$. The bold solid lines represent the orthogonal reconnections (right axis), while the slightly faded lines represent the data at the same temperature for Hopf-link reconnections (left axis) from Ref.~\cite{stasiak2025experimental}.
+%For superfluid helium, it is proper to make the helicity dimensionless in terms of $\kappa^2$.
 }
+%\red{The 3D rendering shows the asynchronous nature of the reconnections in the initial configuration, with the two reconnections occurring at different times; same colour scheme as in Fig.~\ref{fig:visualisation}.}
+                       }
 \label{fig:total-helicity}
 \end{figure}
 
@@ -401,31 +405,29 @@ We now focus on the time evolution of the normal fluid energy spectrum $E(k)$, d
 where $E$ is the total normal fluid energy and $k$ is the magnitude of the three-dimensional wavenumber. The energy at reconnection $E_R$ is given by $E(t_R)$, where $t_R$ is the time at reconnection. The energy spectrum $E(k)$ is displayed in Fig.~3a.
 \begin{figure}
     \centering
-    % \includegraphics[width=0.49\textwidth]{energy-flux-spec.pdf}
+    \includegraphics[width=0.49\textwidth]{energySpec-fluxSpec.pdf}
 
 
 
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics*[width=\textwidth]{energy-spec-scaled.pdf}
-        \caption{}\label{fig:kinetic-energy}
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics*[width=\textwidth]{flux-spec-scaled.pdf}
-        \caption{}\label{fig:energy-flux}
-    \end{subfigure}
-% \begin{subcaptiongroup*}
-% 	\phantomsubcaption\label{fig:minimum-distance}
-% 	\phantomsubcaption\label{fig:prefactors}
-% \end{subcaptiongroup*}
+    % \begin{subfigure}{0.49\textwidth}
+    %     \centering
+    %     \includegraphics*[width=\textwidth]{energy-spec-scaled.pdf}
+    %     \caption{}\label{fig:kinetic-energy}
+    % \end{subfigure}
+    % \begin{subfigure}{0.49\textwidth}
+    %     \centering
+    %     \includegraphics*[width=\textwidth]{flux-spec-scaled.pdf}
+    %     \caption{}\label{fig:energy-flux}
+    % \end{subfigure}
+\begin{subcaptiongroup*}
+	\phantomsubcaption\label{fig:energy-spec}
+	\phantomsubcaption\label{fig:flux-spec}
+\end{subcaptiongroup*}
 
     \caption{\emph{(a):} Normal fluid kinetic energy spectrum $E(k)$ before 
 reconnection (dashed lines), at reconnection (solid lines) 
 and after reconnection (dotted lines) for $T=1.9K$ (red)
-and $T=2.1K$ (blue).\emph{(b):} Spectral normal fluid kinetic energy flux, $\Pi (k)$. It is normalised using the integral scale and the normal fluid energy at reconnection.
-\emph{Inset:} Post reconnection evolution of the integral length scale, $L$.
-Times and temperatures are labelled as in Fig.~3a.}
+and $T=2.1K$ (blue).\emph{(b):} Spectral normal fluid kinetic energy flux, $\Pi (k)$. \red{It is normalised using the box size and the quantum of circulation $\kappa$}. Times and temperatures are labelled as in Fig.~3a.}
 \label{fig:spectra}
 \end{figure}
 %
@@ -466,12 +468,12 @@ The negative sign of $\Pi(k)$ is evidence of a flux of kinetic  energy from smal
 % vortex reconnections trigger an inverse transfer of energy, 
 % which implies the creation of large scale structures, visible
 % in Fig.~\ref{fig:visualisation}} \NOTE{GK: the figure shows small scale structures...}
-This behaviour is quantified by the evolution of the integral length scale $L$, defined as
+This behaviour is quantified by the evolution of the integral length scale $L_0$, defined as
 \begin{equation}
-    L = \frac{\pi}{2 E}\int_0^{\infty}\frac{E(k)}{k}dk, %\Big/ \int_0^{\infty}\!\!E(k)dk.
+    L_0 = \frac{\pi}{2 E}\int_0^{\infty}\frac{E(k)}{k}dk, %\Big/ \int_0^{\infty}\!\!E(k)dk.
 \end{equation}
 The inset of Fig.~3b shows that
-$L$ indeed  increases steadily in the post-reconnection regime. Note that times have been normalised by the largest eddy-turnover-time at the reconnection event, evidencing  it fast evolution.
+$L_R$ indeed  increases steadily in the post-reconnection regime. Note that times have been normalised by the largest eddy-turnover-time at the reconnection event, evidencing  it fast evolution.
 
 To explain the inverse energy transfer shown in Fig.~3b,
 we look whether the reconnection triggers a chirality imbalance. 

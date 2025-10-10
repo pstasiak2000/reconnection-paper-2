@@ -145,7 +145,7 @@ the problem of superfluid turbulence.
 
 \begin{figure*}
 	\centering
-  \includegraphics[width=\textwidth]{snapshots.pdf}
+  \includegraphics[width=0.95 \textwidth]{snapshots-2.pdf}
   %   \begin{subfigure}[b]{0.24\textwidth}
 	% 	\centering
 	% 	\includegraphics*[width=\textwidth]{snap-1.pdf}
@@ -181,18 +181,21 @@ the problem of superfluid turbulence.
 	% 	\includegraphics*[width=\textwidth]{snaps-hel-4.pdf}
 	% \end{subfigure} \hfill
 	\caption{
+    \red{
 Three-dimensional rendering of the time evolution of
 an initially orthogonal vortex configuration 
 undergoing a vortex reconnection at $T = 1.9$K at dimensionless
-times (from left to right)
-$(t-t_R)/\tau_R=-7.47\times10^{-2}$, $-3.09\times10^{-3}$, $8.79\times10^{-4}$ and $5.39\times10^{-3}$, where $\tau_R = L_R/E^{1/2}_R$. The green
-tubes represent the superfluid vortex lines (the tubes’ radii have been 
+times 
+% (from left to right) $(t-t_R)/\tau_R=-7.47\times10^{-2}$, $-3.09\times10^{-3}$, $8.79\times10^{-4}$ and $5.39\times10^{-3}$,
+where $\tau_R = L^2/\kappa$. 
+The green tubes represent the superfluid vortex lines (the tubes’ radii have been 
 greatly exaggerated for visual purpose). In the top sequence,
 the blue volume rendering represents the scaled normal fluid enstrophy 
 $\bom^2/\bom^2_{max}$. Note the Kelvin wave on the superfluid
-vortex at $(t-t_R)/\tau_R=8.79\times10^{-4}$ . In the bottom sequence, the red/blue volume
+vortex at $(t-t_R)/\tau_R\approx0.001$. In the bottom sequence, the red/blue volume
 rendering at the same times represent scaled positive/negative normal fluid
 helicity.	
+    }
 %Three-dimensional rendering of an orthogonal vortex configuration 
 %undergoing a vortex reconnection at $T=1.9K$. The red tubes represent
 %the superfluid vortex
@@ -367,7 +370,8 @@ We consider a periodical box of size $2\pi$ (so that  wavevectors are integers).
 
 To study the reconnection dynamics, we consider two pairs of initially orthogonal vortices (where the corresponding vortices of each pair have opposite circulation in order to preserve periodicity along the boundaries)
 at two distinct temperatures, $T=1.9K$ and $T=2.1K$. The vortex pairs are separated by the distance $D_{\ell}$; each vortex within each pair is initially at distance $d_{\ell}$ to the other vortex, such that $d_{\ell}\ll D_{\ell}$ to ensures that the dynamics in the vicinity of the reconnection is dominated by local interactions, and that the far-field contribution from the other vortex pair is negligible. 
-All results reported hereafter refer only to the reconnection of one pair of vortices. 
+All results reported hereafter \red{related to the orthogonal reconnection} refer only to the reconnection of one pair of vortices. 
+\red{In our findings we also report similar observations using Hopf-links from Ref.~\cite{stasiak2025experimental}, which we show in Fig.\ref{fig:total-helicity}.}
 %\red{In our simulations, the reconnections of the two pairs of vortices occur at different times; here we consider only the vortex dynamics up to and shortly after the first reconnection (see Fig.~\ref{fig:total-helicity}). Hence, all results reported and discussed herafter refer to the first reconnection.}. 
 
 The evolution of the vortex reconnection of a single pair is reported in Fig.~\ref{fig:visualisation}. 
@@ -390,7 +394,7 @@ sudden normal fluid helicity production, as shown in Fig.~\ref{fig:total-helicit
     %     \caption{}\label{fig:}
         
     % \end{subfigure}
-\caption{\red{ \emph(a) Temporal evolution of the normal fluid helicity $\mathcal{H} = \int_{\mathcal{V}}H(\x)dV$ computed over the entire volume $\mathcal{V}$. \emph(b) Post reconnection evolution of the integral length scale, $L_0$ scaled by the reconnection time integral scale $L_R$. The bold solid lines represent the orthogonal reconnections (right axis), while the slightly faded lines represent the data at the same temperature for Hopf-link reconnections (left axis) from Ref.~\cite{stasiak2025experimental}.
+\caption{\red{ \emph(a) Temporal evolution of the normal fluid helicity $\mathcal{H} = \int_{\mathcal{V}}H(\x)dV$ computed over the entire volume $\mathcal{V}$. \emph(b) Post reconnection evolution of the integral length scale, $L_0$ scaled by the reconnection time integral scale $L_R$. The bold solid lines represent the orthogonal reconnections (right axis). In \emph{(a)} and left-axis of \emph{(b)}, the slightly faded lines represent the data at the same temperature for Hopf-link reconnections from Ref.~\cite{stasiak2025experimental}.
 %For superfluid helium, it is proper to make the helicity dimensionless in terms of $\kappa^2$.
 }
 %\red{The 3D rendering shows the asynchronous nature of the reconnections in the initial configuration, with the two reconnections occurring at different times; same colour scheme as in Fig.~\ref{fig:visualisation}.}

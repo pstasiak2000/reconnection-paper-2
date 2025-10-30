@@ -53,27 +53,29 @@ prb,
 \def \K{\mathrm{K}}
 
 \def\red{\textcolor{red}}
+\hbadness=99999  % or any number >=10000
 
 
 \begin{document}
 \preprint{APS/123-QED}
 
-\title{Supplementary Materials: Inverse energy transfer in finite-temperature superfluid vortex reconnections}
+\title{Supplementary Materials: Inverse energy transfer in three-dimensional quantum vortex flows}
 
 \author{P. Z. Stasiak}
 \affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
 
 \author{C.F. Barenghi}
+\affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
+
 \author{A. Baggaley}
 \affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
- 
+\affiliation{Department of Mathematics and Statistics, Lancaster University, Lancaster, LA1 4YF, UK}
 
 \author{G. Krstulovic}
 \affiliation{Universit\'e C\^ote d'Azur, Observatoire de la C\^ote d'Azur, CNRS,Laboratoire Lagrangre, Boulevard de l'Observatoire CS 34229 - F 06304 NICE Cedex 4, France}
 
 \author{L. Galantucci}
 \affiliation{Istituto per le Applicazioni del Calcolo ``M. Picone" IAC CNR, Via dei Taurini 19, 00185 Roma, Italy}
-\affiliation{School of Mathematics, Statistics and Physics, Newcastle University, Newcastle upon Tyne, NE1 7RU, United Kingdom}
 
 \maketitle
 
@@ -89,11 +91,11 @@ prb,
 		\centering
 		\includegraphics[width=0.9\textwidth]{schematic-2.png}
 	\end{subfigure}
-	\caption{Schematic diagram of the initial vortex configuration.}
+	\caption{Schematic diagram of the orthogonal vortex configuration.}
 	\label{fig:schematic}
 \end{figure}
 
-Using Schwarz mesoscopic model \cite{schwarzThreedimensionalVortexDynamics1988a}, vortex lines can be described as space curves $\s(\xi,t)$ of infinitesimal thickness, with a single quantum of circulation $\kappa=h/m_4=9.97\times10^{-8}\text{m}^2/\text{s}$, where $h$ is Planck's constant, $m_4=6.65\times10^{-27}\text{kg}$ is the mass of one helium atom, $\xi$ is the natural parameterisation, arclength, and $t$ is time. These conditions are a good approximation, since the vortex core radius of superfluid \textsuperscript{4}He($a_0=10^{-10}\text{m}$) is much smaller than any of the length scales of interest in turbulent flows. The equation of motion is
+Using Schwarz mesoscopic model \cite{schwarzThreedimensionalVortexDynamics1988a}, vortex lines can be described as space curves $\s(\xi,t)$ of infinitesimal thickness, with a single quantum of circulation $\kappa=h/m_4=9.97\times10^{-8}\text{m}^2/\text{s}$, where $h$ is Planck's constant, $m_4=6.65\times10^{-27}\text{kg}$ is the mass of one helium atom, $\xi$ is the natural parameterization, arclength, and $t$ is time. These conditions are a good approximation, since the vortex core radius of superfluid \textsuperscript{4}He($a_0=10^{-10}\text{m}$) is much smaller than any of the length scales of interest in turbulent flows. The equation of motion is
 \begin{equation}
 	\dot{\s}(\xi,t) = \v_s + \frac{\beta}{1+\beta}\left[\v_{ns}\cdot \s'\right]\s' + \beta\s'\times\v_{ns}+\beta'\s'\times\left[\s'\times \v_{ns}\right],
 \end{equation}
@@ -116,9 +118,20 @@ where $\rho=\rho_n + \rho_s$ is the total density, $\rho_n$ and $\rho_s$ are the
 	\mathbf{f}_{ns} = -\mathcal{D}\s'\times\left[\s'\times(\dot{\s}-\v_n)\right]-\rho_n\kappa\s'\times(\v_n-\dot{\s}), 
 	\label{eq:mutual-friction}
 \end{equation}
-where $\mathcal{D}$ is a coefficient dependent on the vortex Reynolds number and intrinsic properties of the normal fluid. The regularisation of the mutual fricition force onto the normal fluid grid is physically motivated by the strongly localised injection of vorticity during the momentum exchange of point-like particles and viscous flow in classical fluid dynamics \cite{gualtieri2015exact,gualtieri2017turbulence}. In short, the localised vorticity induced by the relative motion between the vortex lines and the normal fluid is diffused to discretisation of the grid spacing $\Delta x$ in a time interval $\epsilon_R$. In this way, the delta-forced fricition as defined in Eq.~\ref{eq:mutual-friction} is regularised by a Gaussian function, the fundamental solution of the diffusion equation. Further details of the method for classical fluids are contained in \cite{gualtieri2015exact,gualtieri2017turbulence} and for FOUCAULT in \cite{galantucciNewSelfconsistentApproach2020b}.  
+where $\mathcal{D}$ is a coefficient dependent on the vortex Reynolds number and intrinsic properties of the normal fluid. The regularization of the mutual friction force onto the normal fluid grid is physically motivated by the strongly localized injection of vorticity during the momentum exchange of point-like particles and viscous flow in classical fluid dynamics \cite{gualtieri2015exact,gualtieri2017turbulence}. In short, the localized vorticity induced by the relative motion between the vortex lines and the normal fluid is diffused to discretization of the grid spacing $\Delta x$ in a time interval $\epsilon_R$. In this way, the delta-forced friction as defined in Eq.~\ref{eq:mutual-friction} is regularized by a Gaussian function, the fundamental solution of the diffusion equation. Further details of the method for classical fluids are contained in \cite{gualtieri2015exact,gualtieri2017turbulence} and for FOUCAULT in \cite{galantucciNewSelfconsistentApproach2020b}.  
 
-In this Letter, we report all results using dimensionless units, where the characteristic length scale is $\tilde{\lambda} = D/D_0$, where $D^3=(1\times10^{-3}\mathrm{m})^3$ is the dimensional cube size, $D_0^3=(2\pi)^3$ is the non-dimensional cubic computational domain. The time scale is given by $\tilde{\tau}=\tilde{\lambda}^2\nu_n^0\nu_n$, where the non-dimensional viscosity $\nu_n^0$ resolves the small scales of the normal fluid. In these simulations, these quanties are $\tilde{\lambda}=1.59\times10^{-4}$m, $\nu_n^0=0.32$ and $\tilde{\tau}=0.366$s at $T=1.9K$ and $\tilde{\tau}=0.485$s at $T=2.1K$. We consider an initial configuration of two pairs of orthongal vortices, initialised as shown in the schematic of Fig.~\ref{fig:schematic}. The seperation between vortices in each pair $d$ is set to be $d_v=0.5$ in dimensionless units, and the shortest distance between pairs is $D_v=\sqrt{(\pi-d_v/2)^2+\pi^2}\approx 3.08$, so that $d_v\ll D_v$. The Lagrangian discretisation of vortex lines is $\Delta \xi = 0.025$ (a total of 1340 discretisation points across the 4 vortex lines), using a timestep of $\Delta t_{VF} = 5.56\times10^{-6}$. For the normal fluid, a total of $N=256^3$ mesh point were used, with a timestep of $\Delta t_{NS} = 45\Delta t_{VF}$. 
+In this Letter, we report all results using dimensionless units, where the characteristic length scale is $\tilde{\lambda} = D/D_0$, where $D^3=(1\times10^{-3}\mathrm{m})^3$ is the dimensional cube size, $D_0^3=(2\pi)^3$ is the non-dimensional cubic computational domain. The time scale is given by $\tilde{\tau}=\tilde{\lambda}^2\nu_n^0/\nu_n$, where the non-dimensional viscosity $\nu_n^0$ resolves the small scales of the normal fluid. In this work, we consider two vortex configurations - initially orthogonal vortices and Hopf links.\\
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{hopflink-snapshot.pdf}
+	\caption{Schematic diagram of the Hopf link vortex configuration.}
+	\label{fig:Hopf-link}
+\end{figure}
+
+\paragraph{Orthogonal reconnection:} The characteristic quantities are $\tilde{\lambda}=1.59\times10^{-4}$m, $\nu_n^0=0.32$ and $\tilde{\tau}=0.366$s at $T=1.9K$ and $\tilde{\tau}=0.485$s at $T=2.1K$. The vortices are initialized as two pairs of orthogonal vortices, as shown in the schematic of Fig.~\ref{fig:schematic}. The separation between vortices in each pair $d$ is set to be $d_v=0.5$ in dimensionless units, and the shortest distance between pairs is $D_v=\sqrt{(\pi-d_v/2)^2+\pi^2}\approx 3.08$, so that $d_v\ll D_v$. The Lagrangian discretization of vortex lines is $\Delta \xi = 0.025$ (a total of 1340 discretization points across the 4 vortex lines), using a timestep of $\Delta t_{VF} = 5.56\times10^{-6}$. For the normal fluid, a total of $N=256^3$ mesh point were used, with a timestep of $\Delta t_{NS} = 45\Delta t_{VF}$. \\
+
+\paragraph{Hopf link:} The characterstic quantities are $\tilde{\lambda}=1.59\times10^{-4}$m, $\nu_n^0=0.16$ and $\tilde{\tau}=0.1836$s at $T=1.9K$ and $\tilde{\tau}=0.2439$s at $T=2.1K$. Vortices are initialized as shown in Fig.~\ref{fig:Hopf-link}, where the blue vortex ring is chosen at an initial offset $n_x\Delta x$ and $n_y \Delta y$ where $n_x,n_y\in\lbrace-3,\cdots 3\rbrace$ and $\Delta x = \Delta y = 0.125$ in units of the code. This gives a total of 49 individual reconnections for each temperature. Both of the rings have radius $R\approx 1$ also in units of the code. Furthermore, each reconnection is supplemented with a normal fluid ring around the superfluid vortex ring, which is generated by superimposing a normal fluid ring generated by a propagating ring of the same radius. In this way, we eliminate a transient phase of generating normal fluid structures. The Lagrangian discretization of the vortex lines is $\Delta\xi = 0.025$ (a total of 668 discretization points across both of the rings), using a timestep of $\Delta_{VF} = 1.25\times 10^{-5}$. For the normal fluid, a total of $N=256^3$ mesh points were used, with a timestep of $\Delta t_{NS} = 40\Delta t_{VF}$. 
 
 \bibliography{references}% Produces the bibliography via BibTeX.
 \end{document}

@@ -90,6 +90,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand*{\NOTE}[1]{\textbf{\color{red}[#1]}}
 \newcommand*{\CHANGE}[1]{{\color{magenta}#1}}
+\newcommand*{\GK}[1]{{\color{blue}#1}}
 \newcommand*{\DEL}[1]{{\color{green}#1}}
 
 
@@ -125,13 +126,12 @@ Vortex reconnections play a fundamental role in fluids.
 They increase the complexity of flow and develop small-scale motions.
 In this work, we report that in superfluids, they can also excite large scales.
 We numerically illustrate that during a superfluid vortex reconnection energy 
-is injected 
-into the thermal (normal) component of helium~II at small length scales, but is transferred nonlinearly  to larger length scales, 
-increasing the integral length scale of the normal fluid.  
-We show that this inverse energy transfer is triggered by the helical imbalance generated 
+is injected into the thermal (normal) component of helium~II at small length scales, but is transferred nonlinearly  to larger length scales, increasing the integral length scale of the normal fluid. 
+We show, \GK{by studying about fifty different reconnections,} that this inverse energy transfer is triggered by the helical imbalance generated 
 %at reconnection 
 in the normal fluid flow by
-the mutual friction force coupling the superfluid vortices and the normal component. We finally discuss
+the mutual friction force coupling the superfluid vortices and the normal component. 
+We finally discuss
 %by decomposing the velocity and the mutual friction (which couples superfluid and normal fluid) into helical modes, showing 
 %that the imbalance of homochiral modes results from the punctuated energy and helicity injection during the reconnection. Finally, we discuss 
 the relevance of our findings to 
@@ -373,7 +373,7 @@ two distinct initial conditions at temperatures $T=1.9K$ and $T=2.1K$: (a) a pai
 corresponding vortices of each pair having opposite circulation, is included in the computation in order to preserve periodicity along the boundaries \cite{suppMat};  
 the vortex pairs are separated by the distance $D_{\ell}$, while each vortex within each pair is initially at distance $d_{\ell}$ to the other vortex, such that $d_{\ell}\ll D_{\ell}$ in order to ensure that the dynamics in the vicinity of the reconnection is dominated by local interactions); (b) a set of 49 Hopf-links, 
 each consisting in two, perpendicular, linked vortex rings at varying initial distances from each other \cite{suppMat}.
-}
+}\GK{Note that the two types of initial conditions are topologically very different, as for the Hopf-Link the superfluid initial helicity is non-zero due to their linking (it is zero for the orthogonal case). For both configurations, the initial normal fluid helicity is zero.}
 
 %All results reported hereafter \red{related to the orthogonal reconnection} refer only to the reconnection of one pair of vortices. 
 %\red{In our findings we also report similar observations using Hopf-links from Ref.~\cite{stasiak2025experimental}, which we show in Fig.\ref{fig:total-helicity}.}
@@ -599,7 +599,7 @@ in quantum fluids may show similarities and differences with their classical cou
 depending on the fluid component investigated: if we consider the approach and separation 
 of superfluid vortex filaments, we recover a classical behaviour
 \cite{stasiak2025experimental}, while if we analyse the normal fluid energy transfer we
-observe a strong non-classical effect. The results presented hence contribute to 
+observe a strong non-classical effect. \GK{The robusteness of our results has been demonstrated by studying almost fifty different reconnections having an initial different topology.} The results presented hence contribute to 
 identifying similarities and differences between classical and quantum turbulence 
 \cite{galantucci-2025}. 
 }

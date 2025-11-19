@@ -537,17 +537,21 @@ due to the incompressible constraint). Finally, the helical decomposition natura
 % complex conjugate and $H^\pm$ is the helicity contribution of each 
 % separate helical mode. \NOTE{GK: the standard definition of the energy and helicity spectra contains the sum over the angles, so the previous definition are wrong (except if you redifined them for some reason).}
 %The rate of change $I^\pm(\k)$ of the energies $E^{\pm}(\k)$ arising from the mutual friction is proportional to the corresponding helical coefficients $f^\pm$, \textit{i.e.} $I^\pm(\k) = \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$, and the related signed helicity injection is $I_H^\pm(\k) = k \mathrm{Re} [f^\pm (v_n^\pm)^*] /\rho_n$. 
-
 A chiral imbalance occurs if the mutual friction force is helical, 
-\textit{i.e.} if the ratio $|f^+|^2/|f^-|^2 \neq 1$, with $|f^\pm|^2$ the total squared norm of the mutual friction components. 
-In Fig.~\ref{fig:mutual-friction-decomp}, we show the temporal evolution of $|f^+|^2/|f^-|^2$ for both temperatures, for orthogonal reconnections
+\textit{i.e.} if $\mathcal{F}_R \neq 1$, where
+\begin{equation}
+	\mathcal{F}_R(t) = \frac{\int dk |f^+(k,t)|^2}{\int dk |f^-(k,t)|^2},
+\end{equation}
+with $|f^\pm|^2$ the squared norm of the mutual friction
+helical decomposition coefficients. 
+In Fig.~\ref{fig:mutual-friction-decomp}, we show the temporal evolution of $\mathcal{F}_R$ for both temperatures, for orthogonal reconnections
 (Hopf-links reconnections show a similar behaviour \cite{suppMat}). 
 %
 \begin{figure}[h!]
     \centering
-    \includegraphics*[width=0.48\textwidth]{fmfDecompFig.pdf}
+    \includegraphics*[width=0.48\textwidth]{fmfDecompFig-1.pdf}
     \caption{Temporal evolution of the ratio of helically-projected mutual friction force components $f^\pm$, for orthogonal reconnections. 
-    Inset: temporal evolution of total helical components.}.
+    Inset: temporal evolution of total helical components.}
     \label{fig:mutual-friction-decomp}
 \end{figure}
 %
@@ -559,7 +563,7 @@ As a result, the ratio $\mathcal{H}^+/\mathcal{H}^-$
 decreases significantly at reconnection and remains smaller than unity even at later times, 
 indicating that the flow is persistently chiral. We conclude that the reconnection triggers indeed a chiral imbalance, \CHANGE{leading to the observed inverse energy transfer}.
 For the sake of completeness, it is worth noting that the total helicity of the flow (obtained by adding the superfluid helicity to that of the normal fluid $\mathcal{H}$) is not conserved.
-From Fig.~\ref{fig:mutual-friction-decomp}, we consider a time $t^*$ after reconnection where the ratio $|f^+|^2/|f^-|^2$ has sufficiently decayed to a roughly 5\% difference and we determine the non-dimensional timescale $\tau = (t^*-t_R)/\tau_R$ during which the mutual friction force is chiral as a result of reconnections: $\tau \approx 0.01$ and $\tau \approx 0.005$
+From Fig.~\ref{fig:mutual-friction-decomp}, we consider a time $t^*$ after reconnection where the ratio $\mathcal{F}_R$ has sufficiently decayed to a roughly 5\% difference and we determine the non-dimensional timescale $\tau = (t^*-t_R)/\tau_R$ during which the mutual friction force is chiral as a result of reconnections: $\tau \approx 0.01$ and $\tau \approx 0.005$
 for $T=1.9$K and $T=2.1$K, respectively, corresponding dimensionally to $\tau \approx 0.1$s for both temperatures. 
 In superfluid turbulence, the timescale between two consecutive reconnections can be smaller than $\tau$ provided that the
 vortex line density $\mathcal{L}$ (length of vortices per unit volume) is larger than $10^8 \text{m}^{-2}$ \cite{stasiak2025experimental,barenghi2004},
